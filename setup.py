@@ -31,7 +31,7 @@ setup(
         'pytest==3.6.4',
         'requests==2.18.1',
         'sanic==0.6.0',
-        'numexpr==cfeae8ae246e95f23613e8b587746ed788b81f35',
+        'numexpr==2.6.5.dev0',
         'cape.client==0.2.0',
         'cape_userdb==' + _get_github_sha(
             'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb'),
@@ -43,7 +43,7 @@ setup(
             'git+https://github.com/bloomsburyai/cape-document-manager#egg=cape_document_manager'),
     ],
     dependency_links=[
-        'git+https://github.com/pydata/numexpr#egg=numexpr-cfeae8ae246e95f23613e8b587746ed788b81f35',
+        'git+https://github.com/pydata/numexpr@cfeae8ae246e95f23613e8b587746ed788b81f35#egg=numexpr-2.6.5.dev0',
         'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb-' + _get_github_sha(
             'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb'),
         'git+https://github.com/bloomsburyai/cape-api-helpers#egg=cape_api_helpers-' + _get_github_sha(
