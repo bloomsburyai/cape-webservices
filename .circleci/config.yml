@@ -31,7 +31,7 @@ jobs:
           command: |
             . venv/bin/activate
             mkdir -p test-results/pytest
-            python3 -m cape_webservices.run & (sleep 180 && pytest -vs --pyargs cape_webservices.tests --junitxml=test-results/pytest/test-results.xml)
+            python3 -m cape_webservices.run & (sleep 300 && pytest -vs --pyargs cape_webservices.tests --junitxml=test-results/pytest/test-results.xml)
 
       - store_test_results:
           path: test-results
