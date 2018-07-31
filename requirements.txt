@@ -1,0 +1,16 @@
+#External dependencies
+Authomatic==0.1.0.post1
+beautifulsoup4==4.6.0
+markdown==2.6.11
+git+https://github.com/pydata/numexpr.git@cfeae8ae246e95f23613e8b587746ed788b81f35
+peewee==3.5.2
+pytest==3.6.4
+requests==2.18.1
+sanic==0.6.0
+
+#internal dependencies
+git+https://github.com/bloomsburyai/cape-client
+git+https://github.com/bloomsburyai/cape-userdb
+git+https://github.com/bloomsburyai/cape-api-helpers
+git+https://github.com/bloomsburyai/cape-document-manager
+git+https://github.com/bloomsburyai/cape-responder

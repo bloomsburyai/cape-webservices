@@ -1,0 +1,42 @@
+# Compiled source #
+###################
+*.class
+*.pyc
+*.bak
+*.swp
+*.com
+*.dll
+*.exe
+*.o
+*.so
+.coverage
+
+# Intellij #
+###################
+.idea
+.idea_modules
+!.idea/codeStyleSettings.xml
+venv
+
+# Cached files #
+##################
+*.pickle
+*.pickle.gz
+*.*~
+Dockerfile~
+
+# Markers #
+###########
+*.pid
+*.cid
+
+# Logs #
+###########
+*.log
+*.logs
+
+# Mac #
+*.DS_Store
+###################
+
+

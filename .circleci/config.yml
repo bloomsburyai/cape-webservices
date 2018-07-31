@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+    working_directory: ~/repo
+
+    steps:
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ .Branch }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip3 install --upgrade pip
+            pip3 install --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-webservices
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ .Branch }}
+
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            mkdir -p test-results/pytest
+            #pytest -vs --pyargs cape_document_qa.tests --junitxml=test-results/pytest/test-results.xml
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
