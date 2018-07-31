@@ -32,26 +32,29 @@ setup(
         'requests==2.18.1',
         'sanic==0.6.0',
         'numexpr==cfeae8ae246e95f23613e8b587746ed788b81f35',
+        'cape.client==' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-client#egg=cape.client'),
+        'cape_userdb==' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb'),
         'cape_api_helpers==' + _get_github_sha(
             'git+https://github.com/bloomsburyai/cape-api-helpers#egg=cape_api_helpers'),
-'cape_machine_reader==' + _get_github_sha(
-                          'git+https://github.com/bloomsburyai/cape-machine-reader#egg=cape_machine_reader'),
-                      'cape_document_manager==' + _get_github_sha(
-                          'git+https://github.com/bloomsburyai/cape-document-manager#egg=cape_document_manager'),
-                      'cape_document_qa==' + _get_github_sha(
-                          'git+https://github.com/bloomsburyai/cape-document-qa#egg=cape_document_qa')
-
+        'cape_responder==' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-responder#egg=cape_responder'),
+        'cape_document_manager==' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-document-manager#egg=cape_document_manager'),
     ],
-
     dependency_links=[
+        'git+https://github.com/pydata/numexpr#egg=numexpr-cfeae8ae246e95f23613e8b587746ed788b81f35',
+        'git+https://github.com/bloomsburyai/cape-client#egg=cape.client-'+_get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-client#egg=cape.client'),
+        'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb-' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-userdb#egg=cape_userdb'),
         'git+https://github.com/bloomsburyai/cape-api-helpers#egg=cape_api_helpers-' + _get_github_sha(
             'git+https://github.com/bloomsburyai/cape-api-helpers#egg=cape_api_helpers'),
-        'git+https://github.com/bloomsburyai/cape-machine-reader#egg=cape_machine_reader-' + _get_github_sha(
-            'git+https://github.com/bloomsburyai/cape-machine-reader#egg=cape_machine_reader'),
+        'git+https://github.com/bloomsburyai/cape-responder#egg=cape_responder-' + _get_github_sha(
+            'git+https://github.com/bloomsburyai/cape-responder#egg=cape_responder'),
         'git+https://github.com/bloomsburyai/cape-document-manager#egg=cape_document_manager-' + _get_github_sha(
             'git+https://github.com/bloomsburyai/cape-document-manager#egg=cape_document_manager'),
-        'git+https://github.com/bloomsburyai/cape-document-qa#egg=cape_document_qa-' + _get_github_sha(
-            'git+https://github.com/bloomsburyai/cape-document-qa#egg=cape_document_qa')
     ],
     package_data={
         '': ['*.*'],
