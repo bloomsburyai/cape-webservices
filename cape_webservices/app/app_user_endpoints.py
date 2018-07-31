@@ -9,12 +9,12 @@ from cape_userdb.event import Event
 from cape_userdb.session import Session
 from cape_userdb.coverage import Coverage
 from cape_responder.responder_core import THRESHOLD_MAP
-from cape_webservices.app.app_saved_reply_endpoints import get_saved_reply_splitter_token
 from cape_webservices.manage_users import create_user, delete_all_user_data
+from cape_document_manager.annotation_store import AnnotationStore
+from cape_document_manager.document_store import DocumentStore
 from cape_api_helpers.exceptions import UserException
 from cape_api_helpers.input import required_parameter, optional_parameter
 from cape_api_helpers.text_responses import *
-from cape_splitter.splitter_core import _save_splitter, Splitter
 from peewee import IntegrityError
 
 _endpoint_route = lambda x: app_user_endpoints.route(URL_BASE + x, methods=['GET', 'POST'])
@@ -229,27 +229,16 @@ def _stats(request):
     unanswered = 0
     total_duration = 0
     average_response_time = 0
-    total_saved_replies = 0
-    total_documents = 0
     questions = []
     source_count = {}
     coverage = []
 
     # Find total number of saved replies
-    splitter_token = get_saved_reply_splitter_token(request['user'].token)
-    splitter = Splitter(splitter_token, enable_storage=True)
-    splitter.reload()
-    if splitter.last_modified is not None and 'saved_reply_store' in splitter.group_collection.attached_objects:
-        saved_reply_store = splitter.group_collection.attached_objects['saved_reply_store']
-        total_saved_replies = saved_reply_store.get_saved_replies()['totalItems']
+    total_saved_replies = len(AnnotationStore.get_annotations(request['user'].token, saved_replies=True))
 
     # Find total number of documents
-    splitter = Splitter(request['user'].token, enable_storage=True)
-    splitter.reload()
-    documents = None
-    if splitter.last_modified is not None and 'documents' in splitter.group_collection.attached_objects:
-        documents = splitter.group_collection.attached_objects['documents']
-        total_documents = len(documents)
+    documents = DocumentStore.get_documents(request['user'].token)
+    total_documents = len(documents)
 
     for event in events:
         question = {
