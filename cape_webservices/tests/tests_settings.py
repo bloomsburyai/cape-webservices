@@ -1,4 +1,1 @@
 URL = 'http://localhost:5050'
-
-TEST_SEND_EMAIL_DOMAIN = 'REPLACEME.mailgun.org'
-TEST_RECEIVE_EMAIL_DOMAIN = 'REPLACEME'
