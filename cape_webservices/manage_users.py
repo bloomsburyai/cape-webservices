@@ -33,7 +33,7 @@ def delete_all_user_data(user_id):
         raise UserException(ERROR_USER_DOES_NOT_EXIST % user_id)
     documents = DocumentStore.get_documents(user.token)
     for document in documents:
-        DocumentStore.delete_document(documents['id'])
+        DocumentStore.delete_document(user.token, document['id'])
     saved_replies = AnnotationStore.get_annotations(user.token, saved_replies=True)
     for saved_reply in saved_replies:
         AnnotationStore.delete_annotation(user.token, saved_reply['id'])
