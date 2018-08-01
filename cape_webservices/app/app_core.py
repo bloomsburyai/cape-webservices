@@ -8,8 +8,8 @@ from cape_api_helpers.output import list_response, debuggable
 from cape_api_helpers.text_responses import *
 
 from cape_responder.responder_core import Responder
-from cape_webservices.webservices_settings import MAX_SIZE_INLINE_TEXT, INLINE_TEXT_DOCUMENT_ID, \
-    HOSTNAME, CONFIG_SERVER
+from cape_webservices.webservices_settings import MAX_SIZE_INLINE_TEXT, \
+    HOSTNAME, CONFIG_SERVER, MAX_NUMBER_OF_ANSWERS
 from cape_responder.task_manager import connect
 from cape_webservices.app.app_middleware import respond_with_json, requires_token
 from cape_webservices.app.app_settings import URL_BASE
@@ -56,7 +56,7 @@ def _test(request):
             'hostname': HOSTNAME, 'port': CONFIG_SERVER['port']}
 
 
-MAX_NUMBER_OF_ANSWERS = 50
+
 
 
 @_endpoint_route('/answer')
