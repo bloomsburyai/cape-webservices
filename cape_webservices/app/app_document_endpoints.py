@@ -3,13 +3,14 @@ from hashlib import sha256
 from cape_webservices.app.app_settings import URL_BASE
 from cape_webservices.app.app_settings import app_document_endpoints
 
-from cape_document_manager.document_store import DocumentStore, DocumentRecord
+from cape_document_manager.document_store import DocumentStore
 
 from cape_webservices.app.app_middleware import respond_with_json, requires_auth
 from cape_api_helpers.exceptions import UserException
 from cape_api_helpers.output import list_response
 from cape_api_helpers.input import required_parameter, optional_parameter, list_document_ids
 from cape_api_helpers.text_responses import *
+from cape_responder.responder_core import Responder
 
 _endpoint_route = lambda x: app_document_endpoints.route(URL_BASE + x, methods=['GET', 'POST'])
 
@@ -44,19 +45,13 @@ def _upload_document(request):
     replace = 'replace' in request['args'] and request['args']['replace'].lower() == 'true'
 
     DocumentStore.create_document(user_id=user_token,
-                                   document_id=document_id,
-                                   title=title,
-                                   text=document_content,
-                                   origin=origin,
-                                   document_type=document_type,
-                                   replace=replace)
-
-    # TODO: pre-cache embeddings in document manager?
-    #embeddings = []
-    #worker = connect()
-    #for text_group in splitter.group_collection.document_groups[document_id]:
-    #    embeddings.append(worker.submit(Responder.get_document_embeddings, user_token, text_group))
-    #worker.gather(embeddings, asynchronous=True)
+                                  document_id=document_id,
+                                  title=title,
+                                  text=document_content,
+                                  origin=origin,
+                                  document_type=document_type,
+                                  replace=replace,
+                                  get_embedding=Responder.get_document_embeddings)
 
     return {'documentId': document_id}
 
@@ -70,7 +65,7 @@ def _get_documents(request, number_of_items=30, offset=0, document_ids=None):
     user_token = request['user'].token
     search_term = optional_parameter(request, 'searchTerm', None)
     documents = DocumentStore.get_documents(user_token, document_ids=document_ids, search_term=search_term)
-    return {'totalItems': len(documents), 'items': documents[offset:offset+number_of_items]}
+    return {'totalItems': len(documents), 'items': documents[offset:offset + number_of_items]}
 
 
 @_endpoint_route('/documents/delete-document')
