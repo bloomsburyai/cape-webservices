@@ -8,15 +8,6 @@ from cape_api_helpers.input import required_parameter, optional_parameter, list_
 
 _endpoint_route = lambda x: app_saved_reply_endpoints.route(URL_BASE + x, methods=['GET', 'POST'])
 
-
-def get_saved_reply_splitter_token(user_token):
-    return user_token + '-saved_reply_store'
-
-
-def get_similarity_model_token(user_token):
-    return user_token + '-similarity_model_state'
-
-
 @_endpoint_route('/saved-replies/get-saved-replies')
 @respond_with_json
 @list_response

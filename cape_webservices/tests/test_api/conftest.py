@@ -38,7 +38,6 @@ def cape_client():
     client = _init_user('testuser', 'testpass', {})
     yield client
     client.logout()
-    # _delete_user('testuser')
 
 
 @pytest.fixture(scope="session")
@@ -46,4 +45,3 @@ def cape_client_answer():
     client = _init_user('testuser_answer', 'testpass_answer', {})
     yield client
     client.logout()
-    # _delete_user('testuser_answer')

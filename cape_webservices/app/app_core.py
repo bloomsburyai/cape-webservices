@@ -73,6 +73,8 @@ def _answer(request, number_of_items=1, offset=0, document_ids=None, max_number_
     source_type = optional_parameter(request, 'sourceType', 'all').lower()
     text = optional_parameter(request, 'text', None)
     speed_or_accuracy = optional_parameter(request, 'speedOrAccuracy', 'balanced').lower()
+    saved_reply_threshold = optional_parameter(request, 'threshold', request['user_from_token'].saved_reply_threshold)
+    document_threshold = optional_parameter(request, 'threshold', request['user_from_token'].document_threshold)
     if source_type not in {'document', 'saved_reply', 'all'}:
         raise UserException(ERROR_INVALID_SOURCE_TYPE)
     if speed_or_accuracy not in {'speed', 'accuracy', 'balanced', 'total'}:
@@ -86,7 +88,7 @@ def _answer(request, number_of_items=1, offset=0, document_ids=None, max_number_
     results = []
 
     if source_type != 'document':
-        results.extend(Responder.get_answers_from_similar_questions(user_token, question, source_type, document_ids))
+        results.extend(Responder.get_answers_from_similar_questions(user_token, question, source_type, document_ids,saved_reply_threshold))
 
     results = sorted(results, key=lambda x: x['confidence'],
                      reverse=True)
@@ -97,7 +99,7 @@ def _answer(request, number_of_items=1, offset=0, document_ids=None, max_number_
                                                             document_ids,
                                                             offset,
                                                             number_of_items - len(results),
-                                                            text))
+                                                            text,document_threshold))
 
     results = results[offset:offset + number_of_items]
 
