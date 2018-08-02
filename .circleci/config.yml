@@ -8,22 +8,17 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache:
-          keys:
-            - v1-{{ .Branch }}
-          paths:
-            - caches/app.tar
+
       - run:
           name: Load Docker image layer cache
           command: |
-            set +o pipefail
-            docker load -i caches/app.tar | true
+            docker pull bloomsburyai/cape
 
       - run:
           name: Build, Push and Deploy image
           no_output_timeout: 40m
           command: |
-            docker build --cache-from=bloomsburyai/cape --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
+            docker build --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
             docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
             docker run -d --ulimit core=0:0 --user root --rm --name cape_instance bloomsburyai/cape
             sleep 60
@@ -42,14 +37,3 @@ jobs:
       - store_artifacts:
           path: test-results
 
-      - run:
-          name: Save Docker image layer cache
-          when: always
-          command: |
-            mkdir -p caches
-            docker save -o caches/app.tar bloomsburyai/cape
-      - save_cache:
-          key: v1-{{ .Branch }}-{{ epoch }}
-          when: always
-          paths:
-            - caches/app.tar
