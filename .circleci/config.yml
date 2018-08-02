@@ -57,9 +57,13 @@ jobs:
             docker build --cache-from=bloomsburyai/cape --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
             docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
             docker login -u lulloa -p $DOCKERHUB_PASSWORD
-            docker run -d --ulimit core=0:0 --user root --rm -v -p 5050:5050 --name cape_instance bloomsburyai/cape
-            docker exec cape_instance pytest -vs --pyargs cape_webservices.tests
+            docker run -d --ulimit core=0:0 --user root --rm -v --name cape_instance bloomsburyai/cape
+            docker exec cape_instance pytest -vs --pyargs cape_webservices.tests --junitxml=/mnt/test-results2.xml
             docker push bloomsburyai/cape
+      - run:
+          name: Copy test artifacts from remote environment to current workspace
+          when: always
+          command: docker cp testcontainer:/mnt/test-results2.xml test-results2/pytest/test-results2.xml
 
       - store_test_results:
           path: test-results2
