@@ -40,8 +40,6 @@ ENV PORT 5050
 
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
-CMD ["bash" ,"-c", "\
-    python3 -m cape_webservices.run $PORT &\
-    ( sleep 180 && pytest -sv --pyargs cape_webservices.tests)"]
+CMD ["bash" ,"-c", "python3 -m cape_webservices.run $PORT" ]
 
 #docker stop my_service;docker rm my_service;docker build -t my_service_image -f deployment/Dockerfile . && docker run -ti --ulimit core=0:0 --user runner --rm -v $(pwd)/..:/mnt --name my_service my_service_image
