@@ -8,12 +8,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ .Branch }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
       - restore_cache:
           keys:
             - v1-{{ .Branch }}
@@ -24,31 +18,6 @@ jobs:
           command: |
             set +o pipefail
             docker load -i caches/app.tar | true
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip3 install --upgrade pip
-            pip3 install --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-webservices
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ .Branch }}
-
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            mkdir -p test-results/pytest
-            python3 -m cape_webservices.run & (sleep 180 && pytest -vs --pyargs cape_webservices.tests --junitxml=test-results/pytest/test-results.xml)
-
-      - store_test_results:
-          path: test-results
-
-      - store_artifacts:
-          path: test-results
 
       - run:
           name: Build, Push and Deploy image
@@ -56,20 +25,20 @@ jobs:
           command: |
             docker build --cache-from=bloomsburyai/cape --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
             docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
-            docker login -u lulloa -p $DOCKERHUB_PASSWORD
             docker run -d --ulimit core=0:0 --user root --rm --name cape_instance bloomsburyai/cape
             sleep 60
-            docker exec cape_instance pytest -vs --pyargs cape_webservices.tests --junitxml=/mnt/test-results2.xml
+            docker exec cape_instance pytest -vs --pyargs cape_webservices.tests --junitxml=/mnt/test-results.xml
+            docker login -u lulloa -p $DOCKERHUB_PASSWORD
             docker push bloomsburyai/cape
       - run:
           name: Copy test artifacts from remote environment to current workspace
           when: always
-          command: docker cp cape_instance:/mnt/test-results2.xml test-results2/pytest/test-results2.xml
+          command: docker cp cape_instance:/mnt/test-results.xml test-results/pytest/test-results.xml
 
       - store_test_results:
-          path: test-results2
+          path: test-results
       - store_artifacts:
-          path: test-results2
+          path: test-results
 
       - run:
           name: Save Docker image layer cache
