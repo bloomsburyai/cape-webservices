@@ -15,7 +15,7 @@ RUN apt-get -y update && \
                        daemontools unzip python3-distutils && \
     apt-get clean
 
-RUN pip3 install --upgrade pip setuptools dumb-init
+RUN pip3 install --upgrade pip setuptools dumb-init ipython
 
 # Ensure that we always use UTF-8 and with US English locale
 RUN locale-gen en_US.UTF-8

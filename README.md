@@ -19,9 +19,13 @@ There are several ways to use Cape :
    * As a docker container : `$ docker run -p 5050:5050 bloomsburyai/cape`
    * As an app with UI (more info below)
    * As a distributed cluser (more info below)
+
    
 ## Tutorials
 
+### Quick start guide with docker
+
+ `docker run -p 5050:5050 bloomsburyai/cape ipython3`
 
 ## API Reference
 
