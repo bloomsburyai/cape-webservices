@@ -58,6 +58,7 @@ jobs:
             docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
             docker login -u lulloa -p $DOCKERHUB_PASSWORD
             docker run -d --ulimit core=0:0 --user root --rm --name cape_instance bloomsburyai/cape
+            sleep 60
             docker exec cape_instance pytest -vs --pyargs cape_webservices.tests --junitxml=/mnt/test-results2.xml
             docker push bloomsburyai/cape
       - run:
