@@ -33,7 +33,9 @@ jobs:
       - run:
           name: Copy test artifacts from remote environment to current workspace
           when: always
-          command: docker cp cape_instance:/mnt/test-results.xml test-results/pytest/test-results.xml
+          command: |
+          mkdir -p test-results/pytest/
+          docker cp cape_instance:/mnt/test-results.xml test-results/pytest/test-results.xml
 
       - store_test_results:
           path: test-results
