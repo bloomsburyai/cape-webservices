@@ -18,7 +18,7 @@ jobs:
           name: Build, Push and Deploy image
           no_output_timeout: 40m
           command: |
-            docker build --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
+            docker build --cache-from=bloomsburyai/cape --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
             docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
             docker run -d --ulimit core=0:0 --user root --rm --name cape_instance bloomsburyai/cape
             sleep 60
