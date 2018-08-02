@@ -12,7 +12,16 @@ jobs:
           - v1-dependencies-{{ .Branch }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+      - restore_cache:
+          keys:
+            - v1-{{ .Branch }}
+          paths:
+            - /caches/app.tar
+      - run:
+          name: Load Docker image layer cache
+          command: |
+            set +o pipefail
+            docker load -i /caches/app.tar | true
       - run:
           name: install dependencies
           command: |
@@ -38,3 +47,23 @@ jobs:
 
       - store_artifacts:
           path: test-results
+
+      - run:
+          name: Build, Push and Deploy image
+          no_output_timeout: 40m
+          command: |
+            docker build --cache-from=bloomsburyai/cape --tag bloomsburyai/cape --file deployment/Dockerfile --rm=false --build-arg COMMIT_SHA1=$CIRCLE_SHA1 .
+            docker tag  bloomsburyai/cape  bloomsburyai/cape:$CIRCLE_SHA1
+            docker login -u lulloa -p $DOCKERHUB_PASSWORD
+            docker push bloomsburyai/cape
+      - run:
+          name: Save Docker image layer cache
+          when: always
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/app.tar bloomsburyai/cape
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          when: always
+          paths:
+            - /caches/app.tar

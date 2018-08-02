@@ -24,9 +24,15 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV PYTHONIOENCODING utf-8
 
-WORKDIR /mnt/
-RUN pip3 install -vv --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-webservices
+#Add non-root user to run app
+RUN useradd -G users -m runner
 
+WORKDIR /mnt/
+#Argument to rebuild from this point after an update
+ARG COMMIT_SHA1=1
+RUN pip3 install -vv --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-webservices
+#Run model tests to automatically download latest standard production model
+RUN pytest -vs --pyargs cape_document_qa.tests
 EXPOSE 5050
 
 #Default configuration
@@ -35,8 +41,7 @@ ENV PORT 5050
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 CMD ["bash" ,"-c", "\
-    glances -w & \
-    python3 -m webservices.run $PORT &\
-    ( sleep 600 && pytest -sv webservice)"]
+    python3 -m cape_webservices.run $PORT &\
+    ( sleep 180 && pytest -sv --pyargs cape_webservices.tests)"]
 
-#docker stop my_service;docker rm my_service;docker build -t my_service_image . && docker run -ti --ulimit core=0:0 --user runner --rm -v $(pwd)/..:/mnt --name my_service my_service_image
+#docker stop my_service;docker rm my_service;docker build -t my_service_image -f deployment/Dockerfile . && docker run -ti --ulimit core=0:0 --user runner --rm -v $(pwd)/..:/mnt --name my_service my_service_image
