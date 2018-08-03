@@ -10,10 +10,6 @@ jobs:
       - setup_remote_docker
 
       - run:
-          name: Load Docker image layer cache
-          command: docker pull bloomsburyai/cape
-
-      - run:
           name: Build, Push and Deploy image
           no_output_timeout: 40m
           command: |
