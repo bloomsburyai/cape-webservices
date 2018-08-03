@@ -41,6 +41,6 @@ ENV PORT 5050
 ENV FRONTEND_PORT 5051
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
-CMD ["bash" ,"-c", "python3 -m cape_webservices.run $PORT && python3 -m cape_frontend.run $FRONTEND_PORT" ]
+CMD ["bash" ,"-c", "python3 -m cape_webservices.run $PORT & python3 -m cape_frontend.run $FRONTEND_PORT" ]
 
 #docker stop my_service;docker rm my_service;docker build -t my_service_image -f deployment/Dockerfile . && docker run -ti --ulimit core=0:0 --user runner --rm -v $(pwd)/..:/mnt --name my_service my_service_image
