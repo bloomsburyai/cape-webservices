@@ -30,6 +30,7 @@ RUN useradd -G users -m runner
 WORKDIR /mnt/
 #Argument to rebuild from this point after an update
 ARG COMMIT_SHA1=1
+RUN pip3 install -vv --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-frontend
 RUN pip3 install -vv --process-dependency-links --upgrade git+https://github.com/bloomsburyai/cape-webservices
 #Run model tests to automatically download latest standard production model
 RUN pytest -vs --pyargs cape_document_qa.tests
@@ -37,9 +38,9 @@ EXPOSE 5050
 
 #Default configuration
 ENV PORT 5050
-
+ENV FRONTEND_PORT 5051
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
-CMD ["bash" ,"-c", "python3 -m cape_webservices.run $PORT" ]
+CMD ["bash" ,"-c", "python3 -m cape_webservices.run $PORT && python3 -m cape_frontend.run $FRONTEND_PORT" ]
 
 #docker stop my_service;docker rm my_service;docker build -t my_service_image -f deployment/Dockerfile . && docker run -ti --ulimit core=0:0 --user runner --rm -v $(pwd)/..:/mnt --name my_service my_service_image
