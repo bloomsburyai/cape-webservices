@@ -11,8 +11,7 @@ jobs:
 
       - run:
           name: Load Docker image layer cache
-          command: |
-            docker pull bloomsburyai/cape
+          command: docker pull bloomsburyai/cape
 
       - run:
           name: Build, Push and Deploy image
