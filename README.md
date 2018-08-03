@@ -28,7 +28,7 @@ There are several ways to use Cape :
 1. Pull the latest version of the Docker image (it will take a few moments to download all dependencies and a machine reading model):
 `docker pull bloomsburyai/cape`
 
-1. Run the Docker container and launch an IPython console within it using the following command: `docker run -ti 5050:5050 bloomsburyai/cape ipython3`
+1. Run the Docker container and launch an IPython console within it using the following command: `docker run -ti -p 5050:5050 -p 5051:5051 bloomsburyai/cape ipython3`
 
 1. Import Responder: `from cape_responder.responder_core import Responder`
 
