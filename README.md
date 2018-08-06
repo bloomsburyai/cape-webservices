@@ -15,11 +15,14 @@ There are several ways to use Cape :
     from cape_responder.responder_core import Responder
     Responder.get_answers_from_documents('my-token','How easy is Cape to use', text ="Cape is an open source large-scale question answering system and is super easy to use!")
    ```
-   * As a service : `python3 -m cape_webservices.run`
-   * As a Docker container : `docker run -p 5050:5050 bloomsburyai/cape`
-   * As an app with UI (more info below)
-   * As a distributed cluster (more info below)
-
+   * As a python service : `python3 -m cape_webservices.run`
+   * As a standalone Docker container : `docker run -p 5050:5050 bloomsburyai/cape`
+   * As an app with UI (more info here)
+   * As a distributed cluster (more info here)
+   * As a slack bot (video [here](https://vimeo.com/258053984), more info here)
+   * AI-in-the-middle email answering system (video [here](https://vimeo.com/258794094), more info here)
+   * As a Facebook bot (more info here)
+   * As a Hangouts bot (more info here)
    
 ## Tutorials
 
