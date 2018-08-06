@@ -4,7 +4,7 @@ Entrypoint for all backend cape webservices.
 ## TL; DR
 
 Cape is a suite of libraries to use the latest in AI to ask questions in plain english to documents.
-As long as the answer is in the documents and the model is sufficiently trained, cape will return the answer.
+As long as the answer is in the documents, Cape will return the answer.
 It was done with love by the team behind Bloomsbury AI, completely refactored to make it Open Source friendly for all expertise levels.
 
 
