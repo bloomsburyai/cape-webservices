@@ -35,7 +35,7 @@ RUN pip3 install -vv --process-dependency-links --upgrade git+https://github.com
 #Run model tests to automatically download latest standard production model
 RUN pytest -vs --pyargs cape_document_qa.tests
 EXPOSE 5050
-
+EXPOSE 5051
 #Default configuration
 ENV PORT 5050
 ENV FRONTEND_PORT 5051
