@@ -68,4 +68,4 @@ In summary this is how Cape is organized:
         - [cape-splitter](https://github.com/bloomsburyai/cape-splitter) Package to split documents into chunks without breaking sentences
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
-   * [cape-frontend](https://github.com/bloomsburyai/cape-frontend),frontend server using the backend server to provide a management dashboard to the users
+   * [cape-frontend](https://github.com/bloomsburyai/cape-frontend) (not in the diagram),Frontend server using the backend server to provide a management dashboard to the users
