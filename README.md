@@ -1,12 +1,14 @@
 # cape-webservices [![CircleCI](https://circleci.com/gh/bloomsburyai/cape-webservices.svg?style=svg&circle-token=fa3cd468ad24f3f22e56daaed4ba32fee60e0918)](https://circleci.com/gh/bloomsburyai/cape-webservices)
 Entrypoint for all backend cape webservices.
 
-## TL; DR
+## Overview of Cape
 
-Cape is a suite of libraries to use the latest in AI to ask questions in plain english to documents.
-As long as the answer is in the documents, Cape will return the answer.
-It was done with love by the team behind Bloomsbury AI, completely refactored to make it *portable* and *Open Source friendly* for all expertise levels.
+Cape is a suite of open-source libraries to manage a questions-answering model that answers questions by "reading" documents automatically. It is based on state-of-the-art machine reading models trained on massive datasets, and includes several mechanisms to make it easy to use and improve based on user feedback. It has been designed to be *portable*, i.e. works on a single laptop or on a cluster of parallel machines to speedup computation, and is *Open Source friendly* to be used at all expertise levels.
 
+It enables users to 
+- upload documents and answer questions extracted from them, 
+- update models by adding a "saved reply", i.e. a pre-defined answer,
+- manage users, documents and saved replies.
 
 There are several ways to use Cape : 
     
