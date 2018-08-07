@@ -58,7 +58,7 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 ![Dependencies Diagram](docs/Dependencies.png)
 
-The previous diagram shows how Cape is organized:
+In summary this is how Cape is organized:
    
    * [cape-webservices](https://github.com/bloomsburyai/cape-webservices),server providing the full machine reading HTTP API, depends on :
       * [cape-responder](https://github.com/bloomsburyai/cape-responder) Unique high level interface for distributing and creating machine reading tasks,depending on :
@@ -68,3 +68,4 @@ The previous diagram shows how Cape is organized:
         - [cape-splitter](https://github.com/bloomsburyai/cape-splitter) Package to split documents into chunks without breaking sentences
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
+   * [cape-frontend](https://github.com/bloomsburyai/cape-frontend),frontend server using the backend server to provide a management dashboard to the users
