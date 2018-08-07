@@ -57,3 +57,13 @@ This will launch both the backend and the frontend webservices, by default it wi
 ## Structure
 
 ![Dependencies Diagram](docs/Dependencies.png)
+
+The previous diagram shows how Cape is organized:
+   
+   * [cape-webservices](https://github.com/bloomsburyai/cape-webservices),server providing the full machine reading API, depends on :
+      * [cape-responder](https://github.com/bloomsburyai/cape-responder) Unique high level interface for distributing and creating machine reading tasks,depending on :
+        - [cape-machine-reader](https://github.com/bloomsburyai/cape-machine-reader) Module to integrate machine reading models
+        - [cape-document-qa](https://github.com/bloomsburyai/cape-document-qa) Integration of a state of machine reading model, with training and evaluation scripts
+      * [cape-document-manager](https://github.com/bloomsburyai/cape-document-qa) Interface to manage document and annotations, using SQLite as an example storage backend, depends on :
+        - [cape-splitter](https://github.com/bloomsburyai/cape-splitter) Package to split documents into chunks without breaking sentences
+      *[cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), API utility functions
