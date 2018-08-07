@@ -5,7 +5,7 @@ Entrypoint for all backend cape webservices.
 
 Cape is a suite of libraries to use the latest in AI to ask questions in plain english to documents.
 As long as the answer is in the documents, Cape will return the answer.
-It was done with love by the team behind Bloomsbury AI, completely refactored to make it Open Source friendly for all expertise levels.
+It was done with love by the team behind Bloomsbury AI, completely refactored to make it *portable* and *Open Source friendly* for all expertise levels.
 
 
 There are several ways to use Cape : 
