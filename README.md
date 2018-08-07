@@ -54,3 +54,6 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 1. If you are interested in understanding a bit more about what the response looks like, display the full response using: `print(response)`
 
+## Structure
+
+![Dependencies Diagram](docs/dependencies.png)
