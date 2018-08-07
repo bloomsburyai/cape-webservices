@@ -11,7 +11,6 @@ from cape_webservices.app.app_inbox_endpoints import app_inbox_endpoints
 from cape_webservices.app.app_user_endpoints import app_user_endpoints
 from cape_webservices import webservices_settings
 
-
 app = Sanic(__name__)
 app.blueprint(app_endpoints)
 app.blueprint(app_annotation_endpoints)
@@ -26,11 +25,11 @@ app.static('/', file_or_directory=webservices_settings.HTML_INDEX_STATIC_FILE)
 
 app.config.update(webservices_settings.WEBAPP_CONFIG)
 
-print("listing endpoints",app.router.routes_all.keys())
-
+info("listing endpoints", app.router.routes_all.keys())
 
 def run(port: Union[None, int] = None):
     if port is not None:
         webservices_settings.CONFIG_SERVER['port'] = int(port)
     info("Using port: %d", webservices_settings.CONFIG_SERVER['port'])
+    app.config.LOGO = None
     app.run(**webservices_settings.CONFIG_SERVER)
