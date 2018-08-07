@@ -56,4 +56,4 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 ## Structure
 
-![Dependencies Diagram](docs/dependencies.png)
+![Dependencies Diagram](docs/Dependencies.png)
