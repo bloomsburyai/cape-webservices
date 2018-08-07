@@ -25,7 +25,8 @@ app.static('/', file_or_directory=webservices_settings.HTML_INDEX_STATIC_FILE)
 
 app.config.update(webservices_settings.WEBAPP_CONFIG)
 
-info("listing endpoints", app.router.routes_all.keys())
+info(f"List of active endpoints { app.router.routes_all.keys() }")
+
 
 def run(port: Union[None, int] = None):
     if port is not None:
