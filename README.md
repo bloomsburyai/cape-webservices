@@ -71,3 +71,4 @@ In summary this is how Cape is organized:
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
    * [cape-frontend](https://github.com/bloomsburyai/cape-frontend) Frontend server (not in the diagram) it uses the backend server API to provide a management dashboard to the users
+
