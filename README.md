@@ -28,6 +28,12 @@ There are several ways to use Cape :
    
 ## Quick start
 
+
+### Minimum Requirements
+
+We recommend at least 3GB of RAM and at least 2 modern CPU cores (4 if virtual). If you're using Docker, ensure you increase the memory resource limits in the Docker preferences.
+
+
 ### Standalone webapp with Docker
 
 You can run a standalone version of the webapp that includes a management dashboard.
@@ -56,6 +62,7 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 1. If you are interested in understanding a bit more about what the response looks like, display the full response using: `print(response)`
 
+
 ## Structure
 
 ![Dependencies Diagram](docs/Dependencies.png)
@@ -71,4 +78,3 @@ In summary this is how Cape is organized:
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
    * [cape-frontend](https://github.com/bloomsburyai/cape-frontend) Frontend server (not in the diagram) it uses the backend server API to provide a management dashboard to the users
-
