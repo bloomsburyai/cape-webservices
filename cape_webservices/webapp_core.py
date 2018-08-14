@@ -38,11 +38,13 @@ app.static('/', file_or_directory=webservices_settings.STATIC_FOLDER)
 app.static('/', file_or_directory=webservices_settings.HTML_INDEX_STATIC_FILE)
 
 # Import plugins if they're installed
+enabled_plugins = []
 try:
     from cape_facebook_plugin.facebook_auth import facebook_auth_endpoints
     from cape_facebook_plugin.facebook_events import facebook_event_endpoints
     app.blueprint(facebook_auth_endpoints)
     app.blueprint(facebook_event_endpoints)
+    enabled_plugins.append('facebook')
     info('Facebook plugin enabled')
 except ImportError:
     info('Facebook plugin disabled')
@@ -50,6 +52,7 @@ except ImportError:
 try:
     from cape_hangouts_plugin.hangouts_events import hangouts_event_endpoints
     app.blueprint(hangouts_event_endpoints)
+    enabled_plugins.append('hangouts')
     info('Hangouts plugin enabled')
 except ImportError:
     info('Hangouts plugin disabled')
@@ -59,6 +62,7 @@ try:
     from cape_slack_plugin.slack_events import slack_event_endpoints
     app.blueprint(slack_auth_endpoints)
     app.blueprint(slack_event_endpoints)
+    enabled_plugins.append('slack')
     info('Slack plugin enabled')
 except ImportError:
     info('Slack plugin disabled')
@@ -66,6 +70,7 @@ except ImportError:
 try:
     from cape_email_plugin.email_events import email_event_endpoints
     app.blueprint(email_event_endpoints)
+    enabled_plugins.append('email')
     info('Email plugin enabled')
 except ImportError as e:
     print(e)
