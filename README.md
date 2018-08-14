@@ -77,4 +77,9 @@ In summary this is how Cape is organized:
         - [cape-splitter](https://github.com/bloomsburyai/cape-splitter) Package to split documents into chunks without breaking sentences
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
+      * Optional plugins:
+        - [cape-slack-plugin](https://github.com/bloomsburyai/cape-slack-plugin), Provides webservice endpoints for creating Slack bots
+        - [cape-facebook-plugin](https://github.com/bloomsburyai/cape-facebook-plugin), Provides webservice endpoints for integrating with Facebook Messenger
+        - [cape-hangouts-plugin](https://github.com/bloomsburyai/cape-hangouts-plugin), Provides webservice endpoints for creating Hangouts bots
+        - [cape-email-plugin](https://github.com/bloomsburyai/cape-email-plugin), Provides support for receiving and responding to questions via email
    * [cape-frontend](https://github.com/bloomsburyai/cape-frontend) Frontend server (not in the diagram) it uses the backend server API to provide a management dashboard to the users
