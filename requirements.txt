@@ -9,6 +9,7 @@ requests==2.18.1
 sanic==0.6.0
 
 
+
 #Internal dependencies
 cape.client==0.2.0
 git+https://github.com/bloomsburyai/cape-userdb
