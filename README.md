@@ -1,12 +1,14 @@
 # cape-webservices [![CircleCI](https://circleci.com/gh/bloomsburyai/cape-webservices.svg?style=svg&circle-token=fa3cd468ad24f3f22e56daaed4ba32fee60e0918)](https://circleci.com/gh/bloomsburyai/cape-webservices)
 Entrypoint for all backend cape webservices.
 
-## TL; DR
+## Overview of Cape
 
-Cape is a suite of libraries to use the latest in AI to ask questions in plain english to documents.
-As long as the answer is in the documents, Cape will return the answer.
-It was done with love by the team behind Bloomsbury AI, completely refactored to make it *portable* and *Open Source friendly* for all expertise levels.
+Cape is a suite of open-source libraries to manage a questions-answering model that answers questions by "reading" documents automatically. It is based on state-of-the-art machine reading models trained on massive datasets, and includes several mechanisms to make it easy to use and improve based on user feedback. It has been designed to be *portable*, i.e. works on a single laptop or on a cluster of parallel machines to speedup computation, and is *Open Source friendly* to be used at all expertise levels.
 
+It enables users to 
+- upload documents and answer questions extracted from them, 
+- update models by adding a "saved reply", i.e. a pre-defined answer,
+- manage users, documents and saved replies.
 
 There are several ways to use Cape : 
     
@@ -26,6 +28,12 @@ There are several ways to use Cape :
    
 ## Quick start
 
+
+### Minimum Requirements
+
+We recommend at least 3GB of RAM and at least 2 modern CPU cores (4 if virtual). If you're using Docker, ensure you increase the memory resource limits in the Docker preferences.
+
+
 ### Standalone webapp with Docker
 
 You can run a standalone version of the webapp that includes a management dashboard.
@@ -36,8 +44,8 @@ After installing [docker](https://www.docker.com/community-edition), update and 
 This will launch both the backend and the frontend webservices, by default it will also create tunnels for both, outputting the public urls:
 
    * To use the frontend just browse to the given url, it will be something similar to :
- **https://`RANDOM_STRING_HERE`.ngrok.io** 
-   * To use the backend you can use our client (documentation [here](http://cape-client.readthedocs.io/en/latest/) or make your own by integrating our HTTP API (documentation [here](https://ui-thermocline.thecape.ai/documentation/index.html)))
+ **https://`RANDOM_STRING_HERE`.ngrok.io?configuration={"api":{"backendURL":"RANDOM_STRING_HERE","timeout":"15000"}}
+   * To use the backend you can use our client (documentation [here](http://cape-client.readthedocs.io/en/latest/) or make your own by integrating our HTTP API (documentation [here](https://`RANDOM_STRING_HERE`.ngrok.io/documentation/index.html)))
 
 ### Quick Start Guide with Docker
 
@@ -54,6 +62,7 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 1. If you are interested in understanding a bit more about what the response looks like, display the full response using: `print(response)`
 
+
 ## Structure
 
 ![Dependencies Diagram](docs/Dependencies.png)
@@ -68,4 +77,9 @@ In summary this is how Cape is organized:
         - [cape-splitter](https://github.com/bloomsburyai/cape-splitter) Package to split documents into chunks without breaking sentences
       * [cape-userdb](https://github.com/bloomsburyai/cape-userdb), Package to manage and store users and configurations
       * [cape-api-helpers](https://github.com/bloomsburyai/cape-api-helpers), HTTP API utility functions
+      * Optional plugins:
+        - [cape-slack-plugin](https://github.com/bloomsburyai/cape-slack-plugin), Provides webservice endpoints for creating Slack bots
+        - [cape-facebook-plugin](https://github.com/bloomsburyai/cape-facebook-plugin), Provides webservice endpoints for integrating with Facebook Messenger
+        - [cape-hangouts-plugin](https://github.com/bloomsburyai/cape-hangouts-plugin), Provides webservice endpoints for creating Hangouts bots
+        - [cape-email-plugin](https://github.com/bloomsburyai/cape-email-plugin), Provides support for receiving and responding to questions via email
    * [cape-frontend](https://github.com/bloomsburyai/cape-frontend) Frontend server (not in the diagram) it uses the backend server API to provide a management dashboard to the users
