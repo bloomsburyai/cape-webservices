@@ -44,7 +44,7 @@ After installing [docker](https://www.docker.com/community-edition), update and 
 This will launch both the backend and the frontend webservices, by default it will also create tunnels for both, outputting the public urls:
 
    * To use the frontend just browse to the given url, it will be something similar to :
- **https://`RANDOM_STRING_HERE`.ngrok.io?configuration={"api":{"backendURL":"RANDOM_STRING_HERE","timeout":"15000"}}
+ **https://`RANDOM_STRING_HERE`.ngrok.io?configuration={"api":{"backendURL":"https://`RANDOM_STRING_HERE`.ngrok.io:5050","timeout":"15000"}}
    * To use the backend you can use our client (documentation [here](http://cape-client.readthedocs.io/en/latest/) or make your own by integrating our HTTP API (documentation [here](https://`RANDOM_STRING_HERE`.ngrok.io/documentation/index.html)))
 
 ### Quick Start Guide with Docker
