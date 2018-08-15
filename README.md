@@ -1,6 +1,8 @@
 # cape-webservices [![CircleCI](https://circleci.com/gh/bloomsburyai/cape-webservices.svg?style=svg&circle-token=fa3cd468ad24f3f22e56daaed4ba32fee60e0918)](https://circleci.com/gh/bloomsburyai/cape-webservices)
+
 Entrypoint for all backend cape webservices.
-Github hosted [cape-frontend](https://github.com/bloomsburyai/cape-frontend) [here](http://bloomsbury.ai/cape-webservices) (this still requires for you to launch a webservice instance).
+
+Github hosted [cape-frontend](https://github.com/bloomsburyai/cape-frontend) [here](http://bloomsbury.ai/landing.html) (this still requires for you to launch a webservice instance).
 
 ## Overview of Cape
 
