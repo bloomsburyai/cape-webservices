@@ -21,10 +21,10 @@ There are several ways to use Cape :
    * As a standalone Docker container : `docker run -p 5050:5050 bloomsburyai/cape`
    * As an app with UI (more info here)
    * As a distributed cluster (more info here)
-   * As a slack bot (video [here](https://vimeo.com/258053984), more info here)
-   * AI-in-the-middle email answering system (video [here](https://vimeo.com/258794094), more info here)
-   * As a Facebook bot (more info here)
-   * As a Hangouts bot (more info here)
+   * As a slack bot (video [here](https://vimeo.com/258053984), more info [here](https://github.com/bloomsburyai/cape-slack-plugin))
+   * AI-in-the-middle email answering system (video [here](https://vimeo.com/258794094), more info [here]((https://github.com/bloomsburyai/cape-email-plugin))
+   * As a Facebook bot (more info [here](https://github.com/bloomsburyai/cape-facebook-plugin))
+   * As a Hangouts bot (more info [here](https://github.com/bloomsburyai/cape-hangouts-plugin))
    
 ## Quick start
 
