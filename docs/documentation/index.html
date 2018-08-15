@@ -1,0 +1,3858 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#backend-service-api-server" class="toc-h1 toc-link" data-title="Backend service - API Server">Backend service - API Server</a>
+          </li>
+          <li>
+            <a href="#frontend-service-management-dashboard-ui" class="toc-h1 toc-link" data-title="Frontend service - Management dashboard UI">Frontend service - Management dashboard UI</a>
+          </li>
+          <li>
+            <a href="#answer" class="toc-h1 toc-link" data-title="Answer">Answer</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#answering-questions" class="toc-h2 toc-link" data-title="Answer">Answering questions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-authentication" class="toc-h1 toc-link" data-title="User - Authentication">User - Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cape-login-authentication" class="toc-h2 toc-link" data-title="User - Authentication">Cape login authentication</a>
+                  </li>
+                  <li>
+                    <a href="#google-authentication" class="toc-h2 toc-link" data-title="User - Authentication">Google authentication</a>
+                  </li>
+                  <li>
+                    <a href="#facebook-authentication" class="toc-h2 toc-link" data-title="User - Authentication">Facebook authentication</a>
+                  </li>
+                  <li>
+                    <a href="#admin-token-authentication" class="toc-h2 toc-link" data-title="User - Authentication">Admin token authentication</a>
+                  </li>
+                  <li>
+                    <a href="#user-token-authentication" class="toc-h2 toc-link" data-title="User - Authentication">User token authentication</a>
+                  </li>
+                  <li>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="User - Authentication">Logout</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#documents" class="toc-h1 toc-link" data-title="Documents">Documents</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-documents" class="toc-h2 toc-link" data-title="Documents">Getting documents</a>
+                  </li>
+                  <li>
+                    <a href="#uploading-a-document" class="toc-h2 toc-link" data-title="Documents">Uploading a document</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-a-document" class="toc-h2 toc-link" data-title="Documents">Deleting a document</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#saved-replies" class="toc-h1 toc-link" data-title="Saved replies">Saved replies</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-saved-replies" class="toc-h2 toc-link" data-title="Saved replies">Getting saved replies</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-saved-reply" class="toc-h2 toc-link" data-title="Saved replies">Creating a saved reply</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-a-saved-reply" class="toc-h2 toc-link" data-title="Saved replies">Deleting a saved reply</a>
+                  </li>
+                  <li>
+                    <a href="#adding-paraphrase-questions" class="toc-h2 toc-link" data-title="Saved replies">Adding paraphrase questions</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-paraphrase-questions" class="toc-h2 toc-link" data-title="Saved replies">Deleting paraphrase questions</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-paraphrase-questions" class="toc-h2 toc-link" data-title="Saved replies">Modifying paraphrase questions</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-canonical-questions" class="toc-h2 toc-link" data-title="Saved replies">Modifying canonical questions</a>
+                  </li>
+                  <li>
+                    <a href="#adding-answers" class="toc-h2 toc-link" data-title="Saved replies">Adding answers</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-answers" class="toc-h2 toc-link" data-title="Saved replies">Deleting answers</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-answers" class="toc-h2 toc-link" data-title="Saved replies"> Modifying answers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#annotations" class="toc-h1 toc-link" data-title="Annotations">Annotations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-annotations" class="toc-h2 toc-link" data-title="Annotations">Getting annotations</a>
+                  </li>
+                  <li>
+                    <a href="#creating-an-annotation" class="toc-h2 toc-link" data-title="Annotations">Creating an annotation</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-an-annotation" class="toc-h2 toc-link" data-title="Annotations">Deleting an annotation</a>
+                  </li>
+                  <li>
+                    <a href="#adding-paraphrase-questions-to-annotations" class="toc-h2 toc-link" data-title="Annotations">Adding paraphrase questions to annotations</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-an-annotation-39-s-paraphrase-questions" class="toc-h2 toc-link" data-title="Annotations">Deleting an annotation's paraphrase questions</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-an-annotation-39-s-paraphrase-questions" class="toc-h2 toc-link" data-title="Annotations">Modifying an annotation's paraphrase questions</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-an-annotation-39-s-canonical-question" class="toc-h2 toc-link" data-title="Annotations">Modifying an annotation's canonical question</a>
+                  </li>
+                  <li>
+                    <a href="#adding-answers-to-annotations" class="toc-h2 toc-link" data-title="Annotations">Adding answers to annotations</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-answers-from-annotations" class="toc-h2 toc-link" data-title="Annotations">Deleting answers from annotations</a>
+                  </li>
+                  <li>
+                    <a href="#modifying-an-annotation-39-s-answers" class="toc-h2 toc-link" data-title="Annotations"> Modifying an annotation's answers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#inbox" class="toc-h1 toc-link" data-title="Inbox">Inbox</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#fetching-a-user-39-s-inbox" class="toc-h2 toc-link" data-title="Inbox">Fetching a user's inbox</a>
+                  </li>
+                  <li>
+                    <a href="#mark-an-inbox-item-read" class="toc-h2 toc-link" data-title="Inbox">Mark an inbox item read</a>
+                  </li>
+                  <li>
+                    <a href="#archiving-an-inbox-item" class="toc-h2 toc-link" data-title="Inbox">Archiving an inbox item</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-configuration" class="toc-h1 toc-link" data-title="User - Configuration">User - Configuration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-the-default-threshold" class="toc-h2 toc-link" data-title="User - Configuration">Getting the default threshold</a>
+                  </li>
+                  <li>
+                    <a href="#setting-the-default-threshold" class="toc-h2 toc-link" data-title="User - Configuration">Setting the default threshold</a>
+                  </li>
+                  <li>
+                    <a href="#setting-the-forward-email-address" class="toc-h2 toc-link" data-title="User - Configuration">Setting the forward email address</a>
+                  </li>
+                  <li>
+                    <a href="#getting-the-user-profile" class="toc-h2 toc-link" data-title="User - Configuration">Getting the user profile</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-creation-and-deletion" class="toc-h1 toc-link" data-title="User - Creation and Deletion">User - Creation and Deletion</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cape-super-admin-creating-a-new-account" class="toc-h2 toc-link" data-title="User - Creation and Deletion">Cape SUPER ADMIN - Creating a new account</a>
+                  </li>
+                  <li>
+                    <a href="#cape-super-admin-deleting-an-existing-account" class="toc-h2 toc-link" data-title="User - Creation and Deletion">Cape SUPER ADMIN - Deleting an existing account</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#handling-results-with-lists" class="toc-h1 toc-link" data-title="Handling results with lists">Handling results with lists</a>
+          </li>
+          <li>
+            <a href="#mock-services" class="toc-h1 toc-link" data-title="Mock services">Mock services</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#full-mock-service" class="toc-h2 toc-link" data-title="Mock services">Full mock service</a>
+                  </li>
+                  <li>
+                    <a href="#unlucky-mock-service" class="toc-h2 toc-link" data-title="Mock services">Unlucky mock service</a>
+                  </li>
+                  <li>
+                    <a href="#error-mock-service" class="toc-h2 toc-link" data-title="Mock services">Error mock service</a>
+                  </li>
+                  <li>
+                    <a href="#timeout-mock-service" class="toc-h2 toc-link" data-title="Mock services">Timeout mock service</a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/bloomsburyai/cape-webservices'>Cape Backend</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation generated with Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p><a href="http://github.com/bloomsburyai/cape-webservices">Cape</a> from the now defunct <a href="http://bloomsbury.ai">Bloomsbury AI</a> is an open source project that provides an API that makes it easy to build software that answers questions about the contents of documents.
+For example, you can use Cape to:</p>
+
+<ul>
+<li>Build a super-powered ctrl+f that finds the answer to questions like &#39;Who is the CTO?&#39;, rather than just all the occurrences of a keyword;</li>
+<li>Build an expressive query tool for textual data - extract features with a single question;</li>
+<li>Build a virtual office assistant that answers routine questions through Slack; and</li>
+<li>Build an add-on to your private search that mimics Google&#39;s &#39;direct answers&#39;.</li>
+</ul>
+
+<p>You can communicate with Cape either directly over HTTP or using our Python client library. To install the Python client simply run:</p>
+
+<p><code>pip3 install cape-client</code></p>
+<h1 id='backend-service-api-server'>Backend service - API Server</h1>
+<p>This documentation is for version 0.1 of the API.
+You need to launch the webservice backend that will provide the API, more info <a href="https://github.com/bloomsburyai/cape-webservices#standalone-webapp-with-docker">here</a>.
+In this documentation we will refer to the location of the backend server as : <code>http://localhost:5050/</code></p>
+<h1 id='frontend-service-management-dashboard-ui'>Frontend service - Management dashboard UI</h1>
+<p>You can run the frontend service that hosts this documentation and a management and dashboard UI.
+The frontend server also provides a handy mock API to tests your integrations.
+In this documentation we will refer to the location of the frontend server as : <code>http://localhost:5051/</code></p>
+<h1 id='answer'>Answer</h1>
+<p>The answer endpoint answers by reading saved replies and documents.</p>
+<h2 id='answering-questions'>Answering questions</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>A token retrieved via the <a href='#user-token-authentication'>/get-user-token</a> endpoint; </li>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To ask the question &quot;what is the colour of the sky ?&quot;</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/answer?token=08aerv08ajkdp&amp;question=what+is+the+colour+of+the+sky+?'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="s">'what is the colour of the sky ?'</span><span class="p">,</span>
+                    <span class="n">user_token</span><span class="o">=</span><span class="s">'08aerv08ajkdp'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Returns the answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="nb">true</span>,
+  <span class="s2">"result"</span>: <span class="o">{</span>
+    <span class="s2">"items"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"answerText"</span>: <span class="s2">"blue"</span>,
+        <span class="s2">"answerContext"</span>: <span class="s2">"to only the lower, more dense portions of the atmosphere.</span><span class="se">\n\n</span><span class="s2">During daylight, the sky appears to be blue because air scatters more blue sunlight than red.[1][2][3][4]"</span>,
+        <span class="s2">"confidence"</span>: 0.73,
+        <span class="s2">"sourceType"</span>: <span class="s2">"document"</span>,
+        <span class="s2">"sourceId"</span>: <span class="s2">"e6451353a0a008b4e2366691e8eff687e4ce6ef28552898d8bbe8be84f4b3ec3"</span>,
+        <span class="s2">"answerTextStartOffset"</span>: 706,
+        <span class="s2">"answerTextEndOffset"</span>: 710,
+        <span class="s2">"answerContextStartOffset"</span>: 608,
+        <span class="s2">"answerContextEndOffset"</span>: 772
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s">"answerText"</span><span class="p">:</span> <span class="s">"blue"</span><span class="p">,</span>
+        <span class="s">"answerContext"</span><span class="p">:</span> <span class="s">"to only the lower, more dense portions of the atmosphere.</span><span class="se">\n\n</span><span class="s">During daylight, the sky appears to be blue because air scatters more blue sunlight than red.[1][2][3][4]"</span><span class="p">,</span>
+        <span class="s">"confidence"</span><span class="p">:</span> <span class="mf">0.73</span><span class="p">,</span>
+        <span class="s">"sourceType"</span><span class="p">:</span> <span class="s">"document"</span><span class="p">,</span>
+        <span class="s">"sourceId"</span><span class="p">:</span> <span class="s">"e6451353a0a008b4e2366691e8eff687e4ce6ef28552898d8bbe8be84f4b3ec3"</span><span class="p">,</span>
+        <span class="s">"answerTextStartOffset"</span><span class="p">:</span> <span class="mi">706</span><span class="p">,</span>
+        <span class="s">"answerTextEndOffset"</span><span class="p">:</span> <span class="mi">710</span><span class="p">,</span>
+        <span class="s">"answerContextStartOffset"</span><span class="p">:</span> <span class="mi">608</span><span class="p">,</span>
+        <span class="s">"answerContextEndOffset"</span><span class="p">:</span> <span class="mi">772</span>
+      <span class="p">}</span>
+<span class="p">]</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/answer</code> <a href="http://localhost:5051/mock/full/api/0.1/answer?token=08aerv08ajkdp&amp;question=Is%20this%20API%20easy%20to%20use?">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>token</strong></td>
+<td>08aerv08ajkdp</td>
+<td>The token retrieved from <a href="#user-token-authentication">/get-user-token</a></td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What colour is the sky?</td>
+<td>The question to ask.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>&quot;The sky is blue&quot;</td>
+<td>Optional inline text to be treated as a temporary document with id &#39;Inline Text&#39;</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>low</td>
+<td>The minimum confidence of answers to return. Can be one of &#39;veryhigh&#39;, &#39;high&#39;, &#39;medium&#39;, &#39;low&#39;, &#39;verylow&#39;.</td>
+</tr>
+<tr>
+<td>documentIds</td>
+<td>document_1, document_2 or [&quot;document_1&quot;,&quot;document_2&quot;]</td>
+<td>A json list or comma separated list of document ids to search within for answers. By default searches all documents.</td>
+</tr>
+<tr>
+<td>sourceType</td>
+<td>document</td>
+<td>Whether to search documents, saved replies or both. Can be one of &#39;document&#39;, &#39;saved_reply&#39; or &#39;all&#39;. Default: &#39;all&#39;.</td>
+</tr>
+<tr>
+<td>speedOrAccuracy</td>
+<td>speed</td>
+<td>Prioritise speed or accuracy in answers. Can be one of &#39;speed&#39;, &#39;accuracy&#39; or &#39;balanced&#39;. Default: &#39;balanced&#39;.</td>
+</tr>
+<tr>
+<td>numberOfItems</td>
+<td>5</td>
+<td>The number of answers to return. Default: 1.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>The starting index for the list of answers. If this value is &#39;2&#39;, and &#39;numberOfItems&#39; is &#39;5&#39;, then answers 2 to 5 will be returned. Default: 0.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<p>Returns a list of answers:</p>
+
+<aside class="notice">
+Unlike other lists <i>answer</i> doesn't provide a <i>totalItems</i> count.
+</aside>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerText</td>
+<td>blue</td>
+<td>The proposed answer to the question.</td>
+</tr>
+<tr>
+<td>answerContext</td>
+<td>to only the lower, more dense portions of the atmosphere.During daylight, the sky appears to be blue because air scatters more blue sunlight than red.[1][2][3][4]</td>
+<td>The context surrounding the proposed answer (if sourceType is &#39;document&#39;).</td>
+</tr>
+<tr>
+<td>confidence</td>
+<td>0.73</td>
+<td>The confidence score of this response, should only be used to sort results and not as probability.</td>
+</tr>
+<tr>
+<td>sourceType</td>
+<td>document</td>
+<td>Whether this result came from a document or a saved reply. Can be either &#39;document&#39; or &#39;saved_reply&#39;.</td>
+</tr>
+<tr>
+<td>sourceId</td>
+<td>document_123</td>
+<td>The Id of the document or saved reply this answer was found in (depending on sourceType).</td>
+</tr>
+<tr>
+<td>answerTextStartOffset</td>
+<td>706</td>
+<td>The first character of the answer. As an index in the document, starting at 0. (if sourceType is &#39;document&#39;).</td>
+</tr>
+<tr>
+<td>answerTextEndOffset</td>
+<td>710</td>
+<td>The last character of the answer. As an index in the document, starting at 0. (if sourceType is &#39;document&#39;).</td>
+</tr>
+<tr>
+<td>answerContextStartOffset</td>
+<td>608</td>
+<td>The first character of the context. As an index in the document, starting at 0. (if sourceType is &#39;document&#39;).</td>
+</tr>
+<tr>
+<td>answerContextEndOffset</td>
+<td>772</td>
+<td>The last character of the context. As an index in the document, starting at 0. (if sourceType is &#39;document&#39;).</td>
+</tr>
+<tr>
+<td>matchedQuestion</td>
+<td>What are the opening hours ?</td>
+<td>The original question that matched the provided question. (if sourceType is &#39;saved_reply&#39;).</td>
+</tr>
+</tbody></table>
+<h1 id='user-authentication'>User - Authentication</h1>
+<p>Most API endpoints require authentication, there are three primary ways to authenticate:</p>
+
+<ul>
+<li>Login authentication: Proves that the user has gone through login and can build his own AI.
+
+<ul>
+<li>Cape login : A login given by the cape team,</li>
+<li>Google login (can be manually enabled): Use your Google credentials to login,</li>
+<li>Facebook login (can be manually enabled): Use your Facebook credentials to login</li>
+</ul></li>
+<li>Admin token authentication: Alternative mechanism for proving that the user has been given authorisation to build their own AI.</li>
+<li>User token authentication: Proves that an AI builder has given the authorisation of usage to a third user.</li>
+</ul>
+<h2 id='cape-login-authentication'>Cape login authentication</h2>
+<p>Login authentication provides both a cookie session Id and the current admin token. Either can be used to authenticate future commands,
+either by providing the cookie as part of the future requests or by passing the admin token via the <em>adminToken</em> parameter.</p>
+
+<blockquote>
+<p>To obtain a cookie session Id:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v <span class="s2">"http://localhost:5050/api/0.1/user/login?login=username&amp;password=password"</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>This returns the session Id</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET /api/0.1/user/login?login<span class="o">=</span>username&amp;password<span class="o">=</span>password HTTP/1.1
+Host: localhost:5050
+User-Agent: curl/7.43.0
+Accept: <span class="k">*</span>/<span class="k">*</span>
+&gt;
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: 60
+Access-Control-Allow-Origin: <span class="k">*</span>
+Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token
+Set-Cookie: <span class="nv">session</span><span class="o">=</span>YRLGcYs3-PpBIa-PT8Q_c1OH6uKXrSYY9UvXnsbZapA; <span class="nv">Path</span><span class="o">=</span>/; <span class="nv">expires</span><span class="o">=</span>2592000; HttpOnly
+Content-Length: 124
+Content-Type: application/json
+&lt;
+<span class="k">*</span> Connection <span class="c">#0 to host localhost left intact</span>
+</code></pre>
+<blockquote>
+<p>Although not needed, the session Id is returned for <strong>indicative</strong> purposes</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"message"</span>:<span class="s2">"Valid credentials supplied"</span>,
+    <span class="s2">"sessionId"</span>:<span class="s2">"YRLGcYs3-PpBIa-PT8Q_c1OH6uKXrSYY9UvXnsbZapA"</span>
+    <span class="s2">"adminToken"</span>:<span class="s2">"29186dba-b589-11e7-97a4-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>When logging in, a cookie with the necessary session Id is returned.
+With this cookie all following requests can be authenticated.</p>
+<h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/user/login</code></p>
+
+<p><a href="http://localhost:5051/mock/full/api/0.1/user/login?login=username&amp;password=password">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>login</strong></td>
+<td>username</td>
+<td>The login of the user.</td>
+</tr>
+<tr>
+<td><strong>password</strong></td>
+<td>password</td>
+<td>The password of the user.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>Valid credentials supplied</td>
+<td>A message describing the success of the credential validation.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>ja9ev-a98ere-da</td>
+<td>A session Id (for indicative purposes only, defined as a cookie).</td>
+</tr>
+<tr>
+<td>adminToken</td>
+<td>29186dba-b589-11e7-97a4-9801a7ae6c69</td>
+<td>The current admin token which can be passed as a parameter instead of cookie-based authentication.</td>
+</tr>
+</tbody></table>
+<h2 id='google-authentication'>Google authentication</h2>
+<p>To enable this authentication, you need to configure the backend accordingly and add a button to the frontend pointing to the necessary callback.
+Google authentication provides a cookie session Id after the user correctly logs in with a Google account.
+The user will be redirected to a supplied URL after authentication.</p>
+<h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/user/google-oauth2callback</code></p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<p>All parameters for this request must be provided via <strong>POST</strong>.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>successCallback</strong></td>
+<td>http://localhost:5051</td>
+<td>URL to redirect the user to after correct authentication.</td>
+</tr>
+<tr>
+<td><strong>errorCallback</strong></td>
+<td>http://localhost:5051/error</td>
+<td>URL to redirect the user to after an error in authentication.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<p>A cookie will be created and the user will be redirected to the supplied URL.</p>
+<h2 id='facebook-authentication'>Facebook authentication</h2>
+<p>To enable this authentication, you need to configure the backend accordingly and add a button to the frontend pointing to the necessary callback.
+Facebook authentication provides a cookie session Id after the user correctly logs in with a Facebook account.
+The user will be redirected to a supplied URL after authentication.</p>
+<h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/user/facebook-oauth2callback</code></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<p>All parameters for this request must be provided via POST.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>successCallback</strong></td>
+<td>http://localhost:5051</td>
+<td>URL to redirect the user to after correct authentication.</td>
+</tr>
+<tr>
+<td><strong>errorCallback</strong></td>
+<td>http://localhost:5051/error</td>
+<td>URL to redirect the user to after an error in authentication.</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<p>A cookie will be created and the user will be redirected to the supplied URL.</p>
+<h2 id='admin-token-authentication'>Admin token authentication</h2>
+<aside class="notice">
+    Requires previous session authentication.
+</aside>
+
+<p>In addition to being provided as part of the <em>login</em> endpoint, the admin token can be requested at any time via <em>/user/get-admin-token</em>.</p>
+
+<blockquote>
+<p>To obtain the current admin token</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/get-admin-token'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">get_admin_token</span><span class="p">())</span>
+</code></pre>
+<blockquote>
+<p>Responds with the admin token</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"adminToken"</span>:<span class="s2">"29186dba-b589-11e7-97a4-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>This token can then be used to make further requests without doing a cookie based login</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/get-profile?adminToken=29186dba-b589-11e7-97a4-9801a7ae6c69'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">(</span><span class="n">admin_token</span><span class="o">=</span><span class="s">"29186dba-b589-11e7-97a4-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">get_profile</span><span class="p">())</span>
+</code></pre>
+<p>The admin token must be passed as a GET parameter.</p>
+<h3 id='definition-4'>Definition</h3>
+<p><code>/api/0.1/user/get-admin-token</code>
+<a href="http://localhost:5051/mock/full/api/0.1/user/get-admin-token">Mock example</a></p>
+<h3 id='input-4'>Input</h3>
+<p>None</p>
+<h3 id='result-4'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>adminToken</td>
+<td>29186dba-b589-11e7-97a4-9801a7ae6c69</td>
+<td>The current admin token which can be passed as a parameter instead of cookie based authentication.</td>
+</tr>
+</tbody></table>
+
+<p>All methods which require authentication will accept the admin token via the <em>adminToken</em> <strong>GET</strong> parameter instead of a
+cookie based authentication.</p>
+<h2 id='user-token-authentication'>User token authentication</h2>
+<aside class="notice">
+    Requires previous session authentication.
+</aside>
+
+<blockquote>
+<p>To obtain the user token. The user token is used for authenticating the &#39;answer&#39; method.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/get-user-token'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_user_token</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>This returns the token</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+            <span class="s2">"userToken"</span>:<span class="s2">"08aerv08ajkdp"</span>
+            <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">'08aerv08ajkdp'</span>
+</code></pre>
+<p>The returned user token can then be used to interact with the Cape AI&#39;s <a href="#answers"><em>answer</em></a> endpoint.</p>
+
+<p>The user token must be passed as a <strong>GET</strong> parameter.</p>
+<h3 id='definition-5'>Definition</h3>
+<p><code>/api/0.1/user/get-user-token</code> <a href="http://localhost:5051/mock/full/api/0.1/user/get-user-token">Mock example</a></p>
+<h3 id='input-5'>Input</h3>
+<p>None</p>
+<h3 id='result-5'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userToken</td>
+<td>j89hvfv89s</td>
+<td>A token that gives the holder access to only the /answer endpoint.</td>
+</tr>
+</tbody></table>
+<h2 id='logout'>Logout</h2>
+<blockquote>
+<p>To logout</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v <span class="s2">"http://localhost:5050/api/0.1/user/logout"</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Logged in:"</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">logged_in</span><span class="p">())</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Logged in:"</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">logged_in</span><span class="p">())</span>
+</code></pre>
+<blockquote>
+<p>This will delete the cookie and invalidate the session in the backend</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET /mock/full/api/0.1/user/logout HTTP/1.1
+Host: localhost:5050
+User-Agent: curl/7.43.0
+Accept: <span class="k">*</span>/<span class="k">*</span>
+Cookie: <span class="nv">session</span><span class="o">=</span>aijvaoerare09vjaer90jva09r
+&gt;
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: 60
+Access-Control-Allow-Origin: <span class="k">*</span>
+Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token
+Set-Cookie: <span class="nv">session</span><span class="o">=</span><span class="s2">""</span>; <span class="nv">Path</span><span class="o">=</span>/; <span class="nv">expires</span><span class="o">=</span>0; Max-Age<span class="o">=</span>0
+Content-Length: 43
+Content-Type: application/json
+&lt;
+<span class="k">*</span> Connection <span class="c">#0 to host localhost left intact</span>
+</code></pre>
+<blockquote>
+<p>Producing the following output</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+            <span class="s2">"message"</span>:<span class="s2">"User logged out"</span>
+            <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Logged</span> <span class="ow">in</span><span class="p">:</span> <span class="bp">True</span>
+<span class="n">Logged</span> <span class="ow">in</span><span class="p">:</span> <span class="bp">False</span>
+</code></pre>
+<p>This operation will log the user out.</p>
+<h3 id='definition-6'>Definition</h3>
+<p><code>/api/0.1/user/logout</code> <a href="http://localhost:5051/mock/full/api/0.1/user/logout">Mock example</a></p>
+<h3 id='input-6'>Input</h3>
+<p>None</p>
+<h3 id='result-6'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>User logged out</td>
+<td>A message confirming the operation</td>
+</tr>
+</tbody></table>
+<h1 id='documents'>Documents</h1><h2 id='getting-documents'>Getting documents</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via <a href='#admin-token-authentication'>get-admin-token</a></li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To retrieve a list of documents</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/documents/get-documents'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_documents</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with a list of documents</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:2,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"custom_id_2"</span>,
+        <span class="s2">"title"</span>:<span class="s2">"document2.txt"</span>,
+        <span class="s2">"origin"</span>:<span class="s2">"document2.txt"</span>,
+        <span class="s2">"text"</span>:<span class="s2">"This is another document."</span>,
+        <span class="s2">"type"</span>:<span class="s2">"file"</span>,
+        <span class="s2">"created"</span>:1508169352,
+        <span class="s2">"modified"</span>:1508169352
+      <span class="o">}</span>,
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"358e1b77c9bcc353946dfe107d6b32ff"</span>,
+        <span class="s2">"title"</span>:<span class="s2">"cape_api.txt"</span>,
+        <span class="s2">"origin"</span>:<span class="s2">"cape_api.txt"</span>,
+        <span class="s2">"text"</span>:<span class="s2">"Welcome to the Cape API 0.1. Hopefully it's pretty easy to use."</span>,
+        <span class="s2">"type"</span>:<span class="s2">"text"</span>,
+        <span class="s2">"created"</span>:1508161723,
+        <span class="s2">"modified"</span>:1508161723
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'custom_id_2'</span><span class="p">,</span>
+            <span class="s">'title'</span><span class="p">:</span> <span class="s">'document2.txt'</span><span class="p">,</span>
+            <span class="s">'origin'</span><span class="p">:</span> <span class="s">'document2.txt'</span><span class="p">,</span>
+            <span class="s">'text'</span><span class="p">:</span> <span class="s">'This is another document.'</span><span class="p">,</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'file'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161723</span><span class="p">,</span>
+            <span class="s">'modified'</span><span class="p">:</span> <span class="mi">1508161723</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'358e1b77c9bcc353946dfe107d6b32ff'</span><span class="p">,</span>
+            <span class="s">'title'</span><span class="p">:</span> <span class="s">'cape_api.txt'</span><span class="p">,</span>
+            <span class="s">'origin'</span><span class="p">:</span> <span class="s">'cape_api.txt'</span><span class="p">,</span>
+            <span class="s">'text'</span><span class="p">:</span> <span class="s">"Welcome to the Cape API 0.1. Hopefully it's pretty easy to use."</span><span class="p">,</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161723</span><span class="p">,</span>
+            <span class="s">'modified'</span><span class="p">:</span> <span class="mi">1508161723</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/documents/get-documents</code> <a href="http://localhost:5051/mock/full/api/0.1/documents/get-documents">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>documentIds</td>
+<td>358e1b77c9bcc353946dfe107d6b32ff</td>
+<td>A json list or comma separated list of document Ids to return. By default returns all documents.</td>
+</tr>
+<tr>
+<td>numberOfItems</td>
+<td>5</td>
+<td>The number of documents to return. Default: 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>The start index of the list of documents. For example, if this is &#39;2&#39;, then the returned documents omits the first two documents. (Default: 0)</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<p>Returns a list of documents in reverse chronological order (newest first):</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>358e1b77c9bcc353946dfe107d6b32ff</td>
+<td>The Id of this document</td>
+</tr>
+<tr>
+<td>title</td>
+<td>API Documentation</td>
+<td>The document&#39;s title (specified at upload).</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>cape_api.txt</td>
+<td>Where this document originally came from.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>Welcome to the Cape API 0.1. Hopefully it&#39;s pretty easy to use.</td>
+<td>The contents of the document.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>text</td>
+<td>Whether this document was created by inputting text or uploading a file. Possible options &#39;text&#39; or &#39;file&#39;.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>1508161723</td>
+<td>Timestamp of when this document was first uploaded.</td>
+</tr>
+<tr>
+<td>modified</td>
+<td>1508161723</td>
+<td>Timestamp of when this document was last modified.</td>
+</tr>
+</tbody></table>
+<h2 id='uploading-a-document'>Uploading a document</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To upload a new documents</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/documents/add-document?title=Example%20document&amp;text=This%20is%20an%20example.&amp;origin=example.txt'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">document_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_document</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Example document"</span><span class="p">,</span>
+                                 <span class="n">text</span><span class="o">=</span><span class="s">"This is an example."</span><span class="p">,</span>
+                                 <span class="n">origin</span><span class="o">=</span><span class="s">"example.txt"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">document_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new document</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"documentId"</span>:<span class="s2">"4e2fc0c58f973ddd4ace0de85a5ebba9b88cc35df80d8c455c6079726075d3bf"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">'4e2fc0c58f973ddd4ace0de85a5ebba9b88cc35df80d8c455c6079726075d3bf'</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/documents/add-document</code> <a href="http://localhost:5051/mock/full/api/0.1/documents/add-document?title=Example%20document&amp;text=This%20is%20an%20example.&amp;origin=example.txt">Mock example</a></p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional. In the case of <strong>text</strong> and <strong>file</strong>, one or the other is required, not both.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>title</strong></td>
+<td>Example document</td>
+<td>The title to give the new document.</td>
+</tr>
+<tr>
+<td>documentId</td>
+<td>my_document.txt</td>
+<td>The ID to give the new document. Default: An SHA256 hash of the document contents.</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>my_document.txt</td>
+<td>Where the document came from. Default: The document&#39;s filename when performing a file upload, otherwise empty.</td>
+</tr>
+<tr>
+<td><strong><em>text</em></strong></td>
+<td>Welcome to my document.</td>
+<td>The plain text contents of the document. Either <em>text</em> or <em>file</em> must be supplied.</td>
+</tr>
+<tr>
+<td><strong><em>file</em></strong></td>
+<td></td>
+<td>A file POSTed as multipart/form-data. Either <em>text</em> or <em>file</em> must be supplied.</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>true</td>
+<td>If true and a document already exists with the same documentId it will be overwritten with the new upload. If false an error is returned when a documentId already exists. Default: false.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>text</td>
+<td>Whether this document was created by inputting text or uploading a file. Can be either &#39;text&#39; or &#39;file&#39;. Default: text.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>documentId</td>
+<td>my_document.txt</td>
+<td>The Id of the new document.</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-a-document'>Deleting a document</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To delete an existing document</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/documents/delete-document?documentId=358e1b77c9bcc353946dfe107d6b32ff'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">document_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_document</span><span class="p">(</span><span class="s">'358e1b77c9bcc353946dfe107d6b32ff'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">document_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted document</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"documentId"</span>:<span class="s2">"358e1b77c9bcc353946dfe107d6b32ff"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">'358e1b77c9bcc353946dfe107d6b32ff'</span>
+</code></pre><h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/documents/delete-document</code> <a href="http://localhost:5051/mock/full/api/0.1/documents/delete-document?documentId=358e1b77c9bcc353946dfe107d6b32ff">Mock example</a></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>documentId</strong></td>
+<td>358e1b77c9bcc353946dfe107d6b32ff</td>
+<td>The Id of the document to delete</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>documentId</td>
+<td>358e1b77c9bcc353946dfe107d6b32ff</td>
+<td>The Id of the document that was deleted</td>
+</tr>
+</tbody></table>
+<h1 id='saved-replies'>Saved replies</h1>
+<p>Saved replies are made up of a pair consisting of a canonical question and
+the response it should produce. In addition to the canonical question a
+saved reply may have many paraphrased questions associated with it which
+should produce the same answer (e.g. &quot;How old are you?&quot; vs &quot;What is your age?&quot;).</p>
+
+<p>The canonical question should be easy to understand and clear - like an FAQ. Paraphrases might be less
+obvious ways of phrasing the same thing.</p>
+
+<p>All saved reply methods require authentication.</p>
+<h2 id='getting-saved-replies'>Getting saved replies</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To retrieve a list of saved replies</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/get-saved-replies'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">saved_replies</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_saved_replies</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">saved_replies</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with a list of saved replies</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:2,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"a0bee8c2-c3b1-11e7-a7fe-9801a7ae6c69"</span>,
+        <span class="s2">"canonicalQuestion"</span>:<span class="s2">"How old are you?"</span>,
+        <span class="s2">"answers"</span>:[
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>,
+                <span class="s2">"answer"</span>: <span class="s2">"18"</span>
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"paraphraseQuestions"</span>:[
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"aa8061f6-c3b1-11e7-b59b-9801a7ae6c69"</span>,
+                <span class="s2">"question"</span>: <span class="s2">"What's your age?"</span>
+            <span class="o">}</span>,
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69"</span>,
+                <span class="s2">"question"</span>: <span class="s2">"What age are you?"</span>
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"created"</span>:1508161734,
+        <span class="s2">"modified"</span>:1508161734
+      <span class="o">}</span>,
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"b496121c-c3b1-11e7-a59d-9801a7ae6c69"</span>,
+        <span class="s2">"canonicalQuestion"</span>:<span class="s2">"What colour is the sky?"</span>,
+        <span class="s2">"answers"</span>:[
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"b86a4afa-c3b1-11e7-9e98-9801a7ae6c69"</span>,
+                <span class="s2">"answer"</span>: <span class="s2">"Blue"</span>
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"created"</span>:1508161323,
+        <span class="s2">"modified"</span>:1508161323
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">"a0bee8c2-c3b1-11e7-a7fe-9801a7ae6c69"</span><span class="p">,</span>
+            <span class="s">'canonicalQuestion'</span><span class="p">:</span> <span class="s">'How old are you?'</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'answer'</span><span class="p">:</span> <span class="s">'18'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">'paraphraseQuestions'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"aa8061f6-c3b1-11e7-b59b-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'question'</span><span class="p">:</span> <span class="s">"What's your age?"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'question'</span><span class="p">:</span> <span class="s">'What age are you?'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161734</span><span class="p">,</span>
+            <span class="s">'modified'</span><span class="p">:</span> <span class="mi">1508161734</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">"b496121c-c3b1-11e7-a59d-9801a7ae6c69"</span><span class="p">,</span>
+            <span class="s">'canonicalQuestion'</span><span class="p">:</span> <span class="s">'What colour is the sky?'</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"b86a4afa-c3b1-11e7-9e98-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'answer'</span><span class="p">:</span> <span class="s">'Blue'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">'paraphraseQuestions'</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161323</span><span class="p">,</span>
+            <span class="s">'modified'</span><span class="p">:</span> <span class="mi">1508161323</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/saved-replies/get-saved-replies</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/get-saved-replies">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>savedReplyIds</td>
+<td>b496121c-c3b1-11e7-a59d-9801a7ae6c69</td>
+<td>A json list or comma separated list of saved reply Ids to return. Returns all saved replies by default.</td>
+</tr>
+<tr>
+<td>searchTerm</td>
+<td>sky</td>
+<td>Filter saved replies based on whether they contain the search term.</td>
+</tr>
+<tr>
+<td>numberOfItems</td>
+<td>5</td>
+<td>The number of saved replies to return. Default: 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>The starting index in the list of saved replies, used in conjunction with numberOfItems to retrieve multiple batches of saved replies. Default: 0.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<p>Returns a list of saved replies in reverse chronological order (newest first):</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>b86a4afa-c3b1-11e7-9e98-9801a7ae6c69</td>
+<td>The reply Id</td>
+</tr>
+<tr>
+<td>canonicalQuestion</td>
+<td>How old are you?</td>
+<td>The main question to identify this saved reply</td>
+</tr>
+<tr>
+<td>answers</td>
+<td>[{&quot;id&quot;: &quot;e953d7a8-c3b1-11e7-ba24-9801a7ae6c69&quot;, &quot;answer&quot;: &quot;18&quot;}]</td>
+<td>A list of saved answers, one of which will be selected at random as the response to the question.</td>
+</tr>
+<tr>
+<td>paraphraseQuestions</td>
+<td>[{&quot;id&quot;: &quot;aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69&quot;, &quot;question&quot;: &quot;What age are you?&quot;}]</td>
+<td>A list of questions which paraphrase the canonical question</td>
+</tr>
+<tr>
+<td>modified</td>
+<td>1508161734</td>
+<td>Timestamp indicating when this saved reply was last modified</td>
+</tr>
+<tr>
+<td>created</td>
+<td>1508161734</td>
+<td>Timestamp indicating when this saved reply was created</td>
+</tr>
+</tbody></table>
+<h2 id='creating-a-saved-reply'>Creating a saved reply</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To create a new saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/add-saved-reply?question=When%20is%20it%20most%20likely%20to%20snow%3F&amp;answer=In%20the%20winter'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_saved_reply</span><span class="p">(</span><span class="s">'When is it most likely to snow?'</span><span class="p">,</span> <span class="s">'In the winter'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"replyId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>,
+    <span class="s2">"answerId"</span>:<span class="s2">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">"replyId"</span><span class="p">:</span> <span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span>
+    <span class="s">"answerId"</span><span class="p">:</span> <span class="s">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/saved-replies/add-saved-reply</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/add-saved-reply?question=When%20is%20it%20most%20likely%20to%20snow%3F&amp;answer=In%20the%20winter">Mock example</a></p>
+
+<p>Questions (whether Canonical or Paraphrase) must be unique.</p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>question</strong></td>
+<td>What colour is the sky?</td>
+<td>The canonical question this saved reply relates to.</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Blue</td>
+<td>An answer to reply with when the question is asked.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>replyId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the new saved reply.</td>
+</tr>
+<tr>
+<td>answerId</td>
+<td>a67678b6-c3b1-11e7-abaa-9801a7ae6c69</td>
+<td>The Id of the new answer in the saved reply.</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-a-saved-reply'>Deleting a saved reply</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<p>Deletes a saved reply, and its associated canonical and paraphrase questions.</p>
+
+<blockquote>
+<p>To delete an existing saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/delete-saved-reply?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">reply_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_saved_reply</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reply_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"replyId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/saved-replies/delete-saved-reply</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/delete-saved-reply?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>replyId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the saved reply to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>replyId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the saved reply that was deleted.</td>
+</tr>
+</tbody></table>
+<h2 id='adding-paraphrase-questions'>Adding paraphrase questions</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To add a paraphrase question to an existing saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/add-paraphrase-question?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20is%20your%20age?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_paraphrase_question</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'What is your age?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-4'>Definition</h3>
+<p><code>/api/0.1/saved-replies/add-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/add-paraphrase-question?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20is%20your%20age?">Mock example</a></p>
+<h3 id='input-4'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>replyId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the saved reply to add a question to</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What is your age?</td>
+<td>The question to add as a paraphase to this saved reply</td>
+</tr>
+</tbody></table>
+<h3 id='result-4'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrased question that was created</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-paraphrase-questions'>Deleting paraphrase questions</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To delete a paraphrase question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/delete-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_paraphrase_question</span><span class="p">(</span><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-5'>Definition</h3>
+<p><code>/api/0.1/saved-replies/delete-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/delete-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-5'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>questionId</strong></td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question to delete</td>
+</tr>
+</tbody></table>
+<h3 id='result-5'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question that was deleted</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-paraphrase-questions'>Modifying paraphrase questions</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To edit an existing paraphrase question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/edit-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69&amp;question=How%20old%20are%you?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_paraphrase_question</span><span class="p">(</span><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'How old are you?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the edited question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-6'>Definition</h3>
+<p><code>/api/0.1/saved-replies/edit-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/edit-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69&amp;question=How%20old%20are%20you?">Mock example</a></p>
+<h3 id='input-6'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>questionId</strong></td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question to modify.</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What age are you?</td>
+<td>The updated question text to use for this paraphrase.</td>
+</tr>
+</tbody></table>
+<h3 id='result-6'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question that was modified.</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-canonical-questions'>Modifying canonical questions</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To modify a saved reply&#39;s canonical question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/edit-canonical-question?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20age%20are%20you?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">reply_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_canonical_question</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'What age are you?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reply_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the modified saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"replyId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-7'>Definition</h3>
+<p><code>/api/0.1/saved-replies/edit-canonical-question</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/edit-canonical-question?replyId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%age%20are%20you?">Mock example</a></p>
+<h3 id='input-7'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>replyId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the saved reply to modify.</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What age are you?</td>
+<td>The updated canonical question text to use for this saved reply.</td>
+</tr>
+</tbody></table>
+<h3 id='result-7'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>replyId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the saved reply that was modified.</td>
+</tr>
+</tbody></table>
+<h2 id='adding-answers'>Adding answers</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To add an additional answer to an existing saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/add-answer?replyId=68c445cc-c3b2-11e7-8a88-9801a7ae6c69&amp;answer=Grey'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_answer</span><span class="p">(</span><span class="s">"68c445cc-c3b2-11e7-8a88-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'Grey'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-8'>Definition</h3>
+<p><code>/api/0.1/saved-replies/add-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/add-answer?replyId=68c445cc-c3b2-11e7-8a88-9801a7ae6c69&amp;answer=Grey">Mock example</a></p>
+<h3 id='input-8'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>replyId</strong></td>
+<td>68c445cc-c3b2-11e7-8a88-9801a7ae6c69</td>
+<td>The Id of the saved reply to add an answer to</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Grey</td>
+<td>The new answer to add to this saved reply</td>
+</tr>
+</tbody></table>
+<h3 id='result-8'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was added</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-answers'>Deleting answers</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To delete an answer from a saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/delete-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_answer</span><span class="p">(</span><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre>
+<p>Saved replies can have more than one answer. When the saved reply is matched, an answer is chosen
+at random from the valid answers.</p>
+
+<p>It is only possible to delete answers if more than one answer currently exists.</p>
+
+<p>Attempting to delete the last remaining answer in a saved reply will result in an error.</p>
+<h3 id='definition-9'>Definition</h3>
+<p><code>/api/0.1/saved-replies/delete-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/delete-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-9'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>answerId</strong></td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='result-9'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was deleted.</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-answers'> Modifying answers</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To edit an answer of an existing saved reply</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/saved-replies/edit-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69&amp;answer=Blue'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_answer</span><span class="p">(</span><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the modified answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-10'>Definition</h3>
+<p><code>/api/0.1/saved-replies/edit-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/saved-replies/edit-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69&amp;answer=Blue">Mock example</a></p>
+<h3 id='input-10'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>answerId</strong></td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer to modify</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Blue</td>
+<td>The updated answer text to use for this saved reply</td>
+</tr>
+</tbody></table>
+<h3 id='result-10'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was modified</td>
+</tr>
+</tbody></table>
+<h1 id='annotations'>Annotations</h1>
+<p>Annotations are made up of a pair consisting of a canonical question and
+the response it should produce, combined with a position within a document.
+In addition to the canonical question an annotation may have also have
+many paraphrased questions associated with it which should produce the 
+same answer (e.g. &quot;How old is Jim?&quot; vs &quot;What is Jim&#39;s age?&quot;).</p>
+
+<p>The canonical question should be easy to understand and clear - like an FAQ.
+Paraphrases might be less obvious ways of phrasing the same thing.</p>
+
+<p>All annotation methods require authentication.</p>
+<h2 id='getting-annotations'>Getting annotations</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To retrieve a list of annotations</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/get-annotations'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">annotations</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_annotations</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">annotations</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with a list of annotations</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:1,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>: <span class="s2">"a0bee8c2-c3b1-11e7-a7fe-9801a7ae6c69"</span>,
+        <span class="s2">"canonicalQuestion"</span>: <span class="s2">"How old are you?"</span>,
+        <span class="s2">"documentId"</span>: <span class="s2">"f2efa8c2-e3b1-12a7-f7fb-9801a7ae6e12"</span>,
+        <span class="s2">"position"</span>: <span class="o">{</span>
+            <span class="s2">"startOffset"</span>: 12,
+            <span class="s2">"endOffset"</span>: 24
+        <span class="o">}</span>,
+        <span class="s2">"answers"</span>:[
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>,
+                <span class="s2">"answer"</span>: <span class="s2">"18"</span>
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"paraphraseQuestions"</span>:[
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"aa8061f6-c3b1-11e7-b59b-9801a7ae6c69"</span>,
+                <span class="s2">"question"</span>: <span class="s2">"What's your age?"</span>
+            <span class="o">}</span>,
+            <span class="o">{</span>
+                <span class="s2">"id"</span>: <span class="s2">"aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69"</span>,
+                <span class="s2">"question"</span>: <span class="s2">"What age are you?"</span>
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"created"</span>:1508161734,
+        <span class="s2">"modified"</span>:1508161734
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">"a0bee8c2-c3b1-11e7-a7fe-9801a7ae6c69"</span><span class="p">,</span>
+            <span class="s">'canonicalQuestion'</span><span class="p">:</span> <span class="s">'How old are you?'</span><span class="p">,</span>
+            <span class="s">"documentId"</span><span class="p">:</span> <span class="s">"f2efa8c2-e3b1-12a7-f7fb-9801a7ae6e12"</span><span class="p">,</span>
+            <span class="s">"position"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">"startOffset"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+                <span class="s">"endOffset"</span><span class="p">:</span> <span class="mi">24</span>
+            <span class="p">},</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'answer'</span><span class="p">:</span> <span class="s">'18'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">'paraphraseQuestions'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"aa8061f6-c3b1-11e7-b59b-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'question'</span><span class="p">:</span> <span class="s">"What's your age?"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">'id'</span><span class="p">:</span> <span class="s">"aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69"</span><span class="p">,</span>
+                    <span class="s">'question'</span><span class="p">:</span> <span class="s">'What age are you?'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161734</span><span class="p">,</span>
+            <span class="s">'modified'</span><span class="p">:</span> <span class="mi">1508161734</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/annotations/get-annotations</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/get-annotations">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>annotationIds</td>
+<td>b496121c-c3b1-11e7-a59d-9801a7ae6c69</td>
+<td>A json list or comma separated list of annotation IDs to return. Returns all annotations by default.</td>
+</tr>
+<tr>
+<td>documentIds</td>
+<td>e453211f-f3b5-12b4-a59d-1143a7fb6a78</td>
+<td>A json list or comma separated list of document IDs to filter on.</td>
+</tr>
+<tr>
+<td>searchTerm</td>
+<td>sky</td>
+<td>Filter annotations based on whether they contain the search term.</td>
+</tr>
+<tr>
+<td>numberOfItems</td>
+<td>5</td>
+<td>The number of annotations to return. Default: 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>The starting index in the list of annotations, used in conjunction with numberOfItems to retrieve multiple batches of annotations. Default: 0.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<p>Returns a list of annotations in reverse chronological order (newest first):</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>b86a4afa-c3b1-11e7-9e98-9801a7ae6c69</td>
+<td>The annotation Id.</td>
+</tr>
+<tr>
+<td>canonicalQuestion</td>
+<td>How old are you?</td>
+<td>The main question to identify this annotation.</td>
+</tr>
+<tr>
+<td>documentId</td>
+<td>e453211f-f3b5-12b4-a59d-1143a7fb6a78</td>
+<td>The document that this annotation is associated with.</td>
+</tr>
+<tr>
+<td>position</td>
+<td></td>
+<td>A position object specifying a start offset and end offset.</td>
+</tr>
+<tr>
+<td>answers</td>
+<td>[{&quot;id&quot;: &quot;e953d7a8-c3b1-11e7-ba24-9801a7ae6c69&quot;, &quot;answer&quot;: &quot;18&quot;}]</td>
+<td>A list of saved answers, one of which will be selected at random as the response to the question.</td>
+</tr>
+<tr>
+<td>paraphraseQuestions</td>
+<td>[{&quot;id&quot;: &quot;aedfbb18-c3b1-11e7-b7c0-9801a7ae6c69&quot;, &quot;question&quot;: &quot;What age are you?&quot;}]</td>
+<td>A list of questions which paraphrase the canonical question.</td>
+</tr>
+<tr>
+<td>modified</td>
+<td>1508161734</td>
+<td>Timestamp indicating when this annotation was last modified.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>1508161734</td>
+<td>Timestamp indicating when this annotation was created.</td>
+</tr>
+</tbody></table>
+<h2 id='creating-an-annotation'>Creating an annotation</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To create a new annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/add-annotation?question=When%20is%20it%20most%20likely%20to%20snow%3F&amp;answer=In%20the%20winter'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="s">'When is it most likely to snow?'</span><span class="p">,</span> <span class="s">'In the winter'</span><span class="p">,</span> <span class="n">document_id</span><span class="o">=</span><span class="s">'e453211f-f3b5-12b4-a59d-1143a7fb6a78'</span><span class="p">,</span> <span class="n">start_offset</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">end_offset</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"annotationId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>,
+    <span class="s2">"answerId"</span>:<span class="s2">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">"annotationId"</span><span class="p">:</span> <span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span>
+    <span class="s">"answerId"</span><span class="p">:</span> <span class="s">"a67678b6-c3b1-11e7-abaa-9801a7ae6c69"</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/annotations/add-annotation</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/add-annotation?question=When%20is%20it%20most%20likely%20to%20snow%3F&amp;answer=In%20the%20winter">Mock example</a></p>
+
+<p>Questions (whether Canonical or Paraphrase) must be unique for each document.</p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>question</strong></td>
+<td>What colour is the sky?</td>
+<td>The canonical question this annotation relates to.</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Blue</td>
+<td>An answer to annotation with when the question is asked.</td>
+</tr>
+<tr>
+<td><strong>documentId</strong></td>
+<td>e453211f-f3b5-12b4-a59d-1143a7fb6a78</td>
+<td>The document that this annotation is associated with.</td>
+</tr>
+<tr>
+<td><strong>startOffset</strong></td>
+<td>12</td>
+<td>The start of this annotation (for text documents).</td>
+</tr>
+<tr>
+<td><strong>endOffset</strong></td>
+<td>24</td>
+<td>The end of this annotation (for text documents).</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td></td>
+<td>A dictionary of user defined information about this annotation.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>annotationId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the new annotation.</td>
+</tr>
+<tr>
+<td>answerId</td>
+<td>a67678b6-c3b1-11e7-abaa-9801a7ae6c69</td>
+<td>The Id of the new answer in the annotation.</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-an-annotation'>Deleting an annotation</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<p>Deletes an annotation, and its associated canonical and paraphrase questions.</p>
+
+<blockquote>
+<p>To delete an existing annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/delete-annotation?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">annotation_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_annotation</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">annotation_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"annotationId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/annotations/delete-annotation</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/delete-annotation?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>annotationId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the annotation to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>annotationId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the annotation that was deleted.</td>
+</tr>
+</tbody></table>
+<h2 id='adding-paraphrase-questions-to-annotations'>Adding paraphrase questions to annotations</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To add a paraphrase question to an existing annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/add-paraphrase-question?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20is%20your%20age?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_annotation_paraphrase_question</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'What is your age?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-4'>Definition</h3>
+<p><code>/api/0.1/annotations/add-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/add-paraphrase-question?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20is%20your%20age?">Mock example</a></p>
+<h3 id='input-4'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>annotationId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the annotation to add a question to.</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What is your age?</td>
+<td>The question to add as a paraphase to this annotation.</td>
+</tr>
+</tbody></table>
+<h3 id='result-4'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrased question that was created.</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-an-annotation-39-s-paraphrase-questions'>Deleting an annotation&#39;s paraphrase questions</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To delete a paraphrase question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/delete-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_annotation_paraphrase_question</span><span class="p">(</span><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-5'>Definition</h3>
+<p><code>/api/0.1/annotations/delete-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/delete-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-5'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>questionId</strong></td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question to delete</td>
+</tr>
+</tbody></table>
+<h3 id='result-5'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question that was deleted</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-an-annotation-39-s-paraphrase-questions'>Modifying an annotation&#39;s paraphrase questions</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To edit an existing paraphrase question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/edit-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69&amp;question=How%20old%20are%you?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">question_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_annotation_paraphrase_question</span><span class="p">(</span><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'How old are you?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the edited question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"questionId"</span>:<span class="s2">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"21e9689e-c3b2-11e7-8a22-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-6'>Definition</h3>
+<p><code>/api/0.1/annotations/edit-paraphrase-question</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/edit-paraphrase-question?questionId=21e9689e-c3b2-11e7-8a22-9801a7ae6c69&amp;question=How%20old%20are%20you?">Mock example</a></p>
+<h3 id='input-6'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>questionId</strong></td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question to modify.</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What age are you?</td>
+<td>The updated question text to use for this paraphrase.</td>
+</tr>
+</tbody></table>
+<h3 id='result-6'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td>21e9689e-c3b2-11e7-8a22-9801a7ae6c69</td>
+<td>The Id of the paraphrase question that was modified.</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-an-annotation-39-s-canonical-question'>Modifying an annotation&#39;s canonical question</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To modify an annotation&#39;s canonical question</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/edit-canonical-question?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%20age%20are%20you?'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">annotation_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_annotation_canonical_question</span><span class="p">(</span><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'What age are you?'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">annotation_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the modified annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"annotationId"</span>:<span class="s2">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-7'>Definition</h3>
+<p><code>/api/0.1/annotations/edit-canonical-question</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/edit-canonical-question?annotationId=f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69&amp;question=What%age%20are%20you?">Mock example</a></p>
+<h3 id='input-7'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>annotationId</strong></td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the annotation to modify.</td>
+</tr>
+<tr>
+<td><strong>question</strong></td>
+<td>What age are you?</td>
+<td>The updated canonical question text to use for this annotation.</td>
+</tr>
+</tbody></table>
+<h3 id='result-7'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>annotationId</td>
+<td>f9f1cf90-c3b1-11e7-91a1-9801a7ae6c69</td>
+<td>The Id of the annotation that was modified.</td>
+</tr>
+</tbody></table>
+<h2 id='adding-answers-to-annotations'>Adding answers to annotations</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To add an additional answer to an existing annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/add-answer?annotationId=68c445cc-c3b2-11e7-8a88-9801a7ae6c69&amp;answer=Grey'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">add_annotation_answer</span><span class="p">(</span><span class="s">"68c445cc-c3b2-11e7-8a88-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'Grey'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the new answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-8'>Definition</h3>
+<p><code>/api/0.1/annotations/add-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/add-answer?annotationId=68c445cc-c3b2-11e7-8a88-9801a7ae6c69&amp;answer=Grey">Mock example</a></p>
+<h3 id='input-8'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>annotationId</strong></td>
+<td>68c445cc-c3b2-11e7-8a88-9801a7ae6c69</td>
+<td>The Id of the annotation to add an answer to</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Grey</td>
+<td>The new answer to add to this annotation</td>
+</tr>
+</tbody></table>
+<h3 id='result-8'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was added</td>
+</tr>
+</tbody></table>
+<h2 id='deleting-answers-from-annotations'>Deleting answers from annotations</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To delete an answer from an annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/delete-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">delete_annotation_answer</span><span class="p">(</span><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the deleted answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre>
+<p>Saved replies can have more than one answer. When the annotation is matched, an answer is chosen
+at random from the valid answers.</p>
+
+<p>It is only possible to delete answers if more than one answer currently exists.</p>
+
+<p>Attempting to delete the last remaining answer in an annotation will result in an error.</p>
+<h3 id='definition-9'>Definition</h3>
+<p><code>/api/0.1/annotations/delete-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/delete-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-9'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>answerId</strong></td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='result-9'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was deleted.</td>
+</tr>
+</tbody></table>
+<h2 id='modifying-an-annotation-39-s-answers'> Modifying an annotation&#39;s answers</h2>
+<aside class="notice">
+    Requires either:
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To edit an answer of an existing annotation</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/annotations/edit-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69&amp;answer=Blue'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">answer_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">edit_answer</span><span class="p">(</span><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the Id of the modified answer</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"answerId"</span>:<span class="s2">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"703acab4-c3b2-11e7-b8b1-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-10'>Definition</h3>
+<p><code>/api/0.1/annotations/edit-answer</code> <a href="http://localhost:5051/mock/full/api/0.1/annotations/edit-answer?answerId=703acab4-c3b2-11e7-b8b1-9801a7ae6c69&amp;answer=Blue">Mock example</a></p>
+<h3 id='input-10'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>answerId</strong></td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer to modify</td>
+</tr>
+<tr>
+<td><strong>answer</strong></td>
+<td>Blue</td>
+<td>The updated answer text to use for this annotation</td>
+</tr>
+</tbody></table>
+<h3 id='result-10'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>answerId</td>
+<td>703acab4-c3b2-11e7-b8b1-9801a7ae6c69</td>
+<td>The Id of the answer that was modified</td>
+</tr>
+</tbody></table>
+<h1 id='inbox'>Inbox</h1><h2 id='fetching-a-user-39-s-inbox'>Fetching a user&#39;s inbox</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To retrieve the currently logged in user&#39;s inbox</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/inbox/get-inbox'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">inbox</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_inbox</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inbox</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Returns the following list of inbox items</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:2,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"4124"</span>,
+        <span class="s2">"answered"</span>:false,
+        <span class="s2">"read"</span>:false,
+        <span class="s2">"question"</span>:<span class="s2">"Who are you?"</span>,
+        <span class="s2">"questionSource"</span>:<span class="s2">"API"</span>,
+        <span class="s2">"created"</span>:1508162032,
+        <span class="s2">"answers"</span>:[]
+      <span class="o">}</span>,
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"4123"</span>,
+        <span class="s2">"answered"</span>:true,
+        <span class="s2">"read"</span>:false,
+        <span class="s2">"question"</span>:<span class="s2">"How easy is the API to use?"</span>,
+        <span class="s2">"questionSource"</span>:<span class="s2">"API"</span>,
+        <span class="s2">"created"</span>:1508161834,
+        <span class="s2">"answers"</span>:[
+          <span class="o">{</span>
+            <span class="s2">"answerText"</span>:<span class="s2">"Hopefully it's pretty easy"</span>,
+            <span class="s2">"answerContext"</span>:<span class="s2">"in the instructions. Hopefully it's pretty easy. We think that then you can "</span>,
+            <span class="s2">"confidence"</span>:0.75,
+            <span class="s2">"sourceType"</span>:<span class="s2">"document"</span>,
+            <span class="s2">"sourceId"</span>:<span class="s2">"358e1b77c9bcc353946dfe107d6b32ff"</span>,
+            <span class="s2">"answerTextStartOffset"</span>:30,
+            <span class="s2">"answerTextEndOffset"</span>:56,
+            <span class="s2">"answerContextStartOffset"</span>:17,
+            <span class="s2">"answerContextEndOffset"</span>:98
+          <span class="o">}</span>
+        <span class="o">]</span>
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'4124'</span><span class="p">,</span>
+            <span class="s">'answered'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'read'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'question'</span><span class="p">:</span> <span class="s">'Who are you?'</span><span class="p">,</span>
+            <span class="s">'questionSource'</span><span class="p">:</span> <span class="s">'API'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508162032</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'4123'</span><span class="p">,</span>
+            <span class="s">'answered'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'read'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'question'</span><span class="p">:</span> <span class="s">'How easy is the API to use?'</span><span class="p">,</span>
+            <span class="s">'questionSource'</span><span class="p">:</span> <span class="s">'API'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161834</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"answerText"</span><span class="p">:</span><span class="s">"Hopefully it's pretty easy"</span><span class="p">,</span>
+                    <span class="s">"answerContext"</span><span class="p">:</span><span class="s">"in the instructions. Hopefully it's pretty easy. We think that then you can "</span><span class="p">,</span>
+                    <span class="s">"confidence"</span><span class="p">:</span><span class="mf">0.75</span><span class="p">,</span>
+                    <span class="s">"sourceType"</span><span class="p">:</span><span class="s">"document"</span><span class="p">,</span>
+                    <span class="s">"sourceId"</span><span class="p">:</span><span class="s">"358e1b77c9bcc353946dfe107d6b32ff"</span><span class="p">,</span>
+                    <span class="s">"answerTextStartOffset"</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
+                    <span class="s">"answerTextEndOffset"</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span>
+                    <span class="s">"answerContextStartOffset"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span>
+                    <span class="s">"answerContextEndOffset"</span><span class="p">:</span><span class="mi">98</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/inbox/get-inbox</code> <a href="http://localhost:5051/mock/full/api/0.1/inbox/get-inbox">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>read</td>
+<td>false</td>
+<td>Filter messages based on whether they have been read. Can be &#39;true&#39;, &#39;false&#39; or &#39;both&#39;. Default: &#39;both&#39;.</td>
+</tr>
+<tr>
+<td>answered</td>
+<td>true</td>
+<td>Filter messages based on whether they have been answered. Can be &#39;true&#39;, &#39;false&#39; or &#39;both&#39;. Default: &#39;both&#39;.</td>
+</tr>
+<tr>
+<td>searchTerm</td>
+<td>sky</td>
+<td>Filter messages based on whether they contain the search term. By default there is no filter.</td>
+</tr>
+<tr>
+<td>numberOfItems</td>
+<td>5</td>
+<td>The number of inbox items to return. Default: 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>The starting index in the list of inbox items, so if the starting index is 1 and &#39;numberOfItems&#39; is 5, items 1-6 will be returned. Default: 0.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<p>Returns a list of inbox items in reverse chronological order (newest first):</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>5a3f6a28-c3b1-11e7-8087-9801a7ae6c69</td>
+<td>Unique Id for this inbox item</td>
+</tr>
+<tr>
+<td>question</td>
+<td>What colour is the sky?</td>
+<td>The question that a user asked</td>
+</tr>
+<tr>
+<td>read</td>
+<td>false</td>
+<td>Whether this item has been read</td>
+</tr>
+<tr>
+<td>answered</td>
+<td>true</td>
+<td>Whether an answer could be found for this question</td>
+</tr>
+<tr>
+<td>answers</td>
+<td></td>
+<td>A list of answers as returned by <a href="#answering-questions">/answers</a> endpoint</td>
+</tr>
+<tr>
+<td>created</td>
+<td>1508162032</td>
+<td>Timestamp indicating when this question was asked</td>
+</tr>
+</tbody></table>
+<h2 id='mark-an-inbox-item-read'>Mark an inbox item read</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via <a href='#admin-token-authentication'>get-admin-token</a>; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To mark an inbox item as having been read</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/inbox/mark-inbox-read?inboxId=123'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">inbox_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">mark_inbox_read</span><span class="p">(</span><span class="s">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inbox_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the inboxId that was marked as being read</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"inboxId"</span>:<span class="s2">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/inbox/mark-inbox-read</code> <a href="http://localhost:5051/mock/full/api/0.1/inbox/mark-inbox-read?inboxId=7e94dfae-c3b1-11e7-a15b-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>inboxId</strong></td>
+<td>7e94dfae-c3b1-11e7-a15b-9801a7ae6c69</td>
+<td>The inbox item to mark as being read.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>inboxId</td>
+<td>7e94dfae-c3b1-11e7-a15b-9801a7ae6c69</td>
+<td>The inbox item that was marked as read.</td>
+</tr>
+</tbody></table>
+<h2 id='archiving-an-inbox-item'>Archiving an inbox item</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via <a href='#admin-token-authentication'>get-admin-token</a>; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To move an inbox item to the archive</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/inbox/archive-inbox?inboxId=7e94dfae-c3b1-11e7-a15b-9801a7ae6c69'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">inbox_id</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">archive_inbox</span><span class="p">(</span><span class="s">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inbox_id</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the inboxId that was archived</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"inboxId"</span>:<span class="s2">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"7e94dfae-c3b1-11e7-a15b-9801a7ae6c69"</span>
+</code></pre><h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/inbox/archive-inbox</code> <a href="http://localhost:5051/mock/full/api/0.1/inbox/archive-inbox?inboxId=7e94dfae-c3b1-11e7-a15b-9801a7ae6c69">Mock example</a></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>inboxId</strong></td>
+<td>7e94dfae-c3b1-11e7-a15b-9801a7ae6c69</td>
+<td>The inbox item to archive.</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>inboxId</td>
+<td>7e94dfae-c3b1-11e7-a15b-9801a7ae6c69</td>
+<td>The inbox item that was archived.</td>
+</tr>
+</tbody></table>
+<h1 id='user-configuration'>User - Configuration</h1><h2 id='getting-the-default-threshold'>Getting the default threshold</h2>
+<p>If a threshold parameter isn&#39;t specified when calling the <a href="#answers"><em>answer</em></a> endpoint a default threshold is used.</p>
+
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To get the current default threshold</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/get-default-threshold'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">default_threshold</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_default_threshold</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">default_threshold</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the default threshold</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"threshold"</span>:<span class="s2">"medium"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"medium"</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/user/get-default-threshold</code> <a href="http://localhost:5051/mock/full/api/0.1/user/get-default-threshold">Mock example</a></p>
+<h3 id='input'>Input</h3>
+<p>None</p>
+<h3 id='result'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>threshold</td>
+<td>medium</td>
+<td>The current default threshold, either &#39;verylow&#39;, low&#39;, &#39;medium&#39;, &#39;high&#39; or &#39;veryhigh&#39;.</td>
+</tr>
+</tbody></table>
+<h2 id='setting-the-default-threshold'>Setting the default threshold</h2>
+<p>If a threshold parameter isn&#39;t specified when calling the <a href="#answers"><em>answer</em></a> endpoint a default threshold is used.</p>
+
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To set a new default threshold</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/set-default-threshold?threshold=high'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">default_threshold</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_default_threshold</span><span class="p">(</span><span class="s">"high"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">default_threshold</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the new default threshold</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"threshold"</span>:<span class="s2">"high"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"high"</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/user/set-default-threshold</code> <a href="http://localhost:5051/mock/full/api/0.1/user/set-default-threshold?threshold=high">Mock example</a></p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>threshold</strong></td>
+<td>high</td>
+<td>The new default threshold to set, must be either &#39;verylow&#39;, &#39;low&#39;, &#39;medium&#39;, &#39;high&#39; or &#39;veryhigh&#39;.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>threshold</td>
+<td>high</td>
+<td>The new default threshold that&#39;s just been set.</td>
+</tr>
+</tbody></table>
+<h2 id='setting-the-forward-email-address'>Setting the forward email address</h2>
+<p>If a forwarding email is set users can send emails to &#39;&lt;token&gt;@thecape.ai&#39; (where &#39;token&#39; is the user token) and receive a response by email.</p>
+
+<p>When an answer isn&#39;t found an email is sent to the forward email address with the top three suggestions from Cape to assist a human expert in providing the correct response, when the experts replies the answer is stored as a saved reply to answer similar future questions.</p>
+
+<aside class="notice">
+    To enable this functionality, after a forward email address is set, we will send by email an activation link to verify ownership.
+</aside>
+
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To set a new forward email address</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/set-forward-email?email=test@bloomsbury.ai'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">forward_email</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">set_forward_email</span><span class="p">(</span><span class="s">"test@bloomsbury.ai"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">forward_email</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Responds with the new forward email address</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"forwardEmail"</span>:<span class="s2">"test@bloomsbury.ai"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="s">"test@bloomsbury.ai"</span>
+</code></pre><h3 id='definition-3'>Definition</h3>
+<p><code>/api/0.1/user/set-forward-email</code> <a href="http://localhost:5051/mock/full/api/0.1/user/set-forward-email?email=test@bloomsbury.ai">Mock example</a></p>
+<h3 id='input-3'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>email</strong></td>
+<td>test@bloomsbury.ai</td>
+<td>The new forward email address to set.</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>test@bloomsbury.ai</td>
+<td>The new forward email address that has just been set.</td>
+</tr>
+</tbody></table>
+<h2 id='getting-the-user-profile'>Getting the user profile</h2>
+<aside class="notice">
+    Requires  either :
+    <ul>
+        <li>An admin token retrieved via the <a href='#admin-token-authentication'>get-admin-token</a> endpoint; or</li>
+        <li>A logged session enabled via any <a href='#user-authentication'>Authentication</a> method.</li>
+    </ul>
+</aside>
+
+<blockquote>
+<p>To get the current user&#39;s profile</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/user/get-profile'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">get_profile</span><span class="p">())</span>
+</code></pre>
+<blockquote>
+<p>Responds with the user profile</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"username"</span>:<span class="s2">"test@bloomsbury.ai"</span>,
+    <span class="s2">"plan"</span>:<span class="s2">"free"</span>,
+    <span class="s2">"termsAgreed"</span>:false,
+    <span class="s2">"onboardingCompleted"</span>:false,
+    <span class="s2">"forwardEmail"</span>:<span class="s2">"test@bloomsbury.ai"</span>,
+    <span class="s2">"forwardEmailVerified"</span>: <span class="nb">false</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">"username"</span><span class="p">:</span><span class="s">"test@bloomsbury.ai"</span><span class="p">,</span>
+    <span class="s">"plan"</span><span class="p">:</span><span class="s">"free"</span><span class="p">,</span>
+    <span class="s">"termsAgreed"</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+    <span class="s">"onboardingCompleted"</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+    <span class="s">"forwardEmail"</span><span class="p">:</span><span class="s">"test@bloomsbury.ai"</span><span class="p">,</span>
+    <span class="s">"forwardEmailVerified"</span><span class="p">:</span> <span class="bp">False</span>
+  <span class="p">}</span>
+</code></pre><h3 id='definition-4'>Definition</h3>
+<p><code>/api/0.1/user/get-profile</code> <a href="http://localhost:5051/mock/full/api/0.1/user/get-profile">Mock example</a></p>
+<h3 id='input-4'>Input</h3>
+<p>None</p>
+<h3 id='result-4'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>test@bloomsbury.ai</td>
+<td>The currently logged in user&#39;s username.</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>pro</td>
+<td>The plan selected by the user, can be &quot;free&quot;,&quot;basic&quot; and &quot;pro&quot;.</td>
+</tr>
+<tr>
+<td>termsAgreed</td>
+<td>false</td>
+<td>Whether or not we need to display the &quot;Terms and Conditions&quot; banner.</td>
+</tr>
+<tr>
+<td>onboardingCompleted</td>
+<td>false</td>
+<td>Whether or not the onboarding process was completed.</td>
+</tr>
+<tr>
+<td>forwardEmail</td>
+<td>test@bloomsbury.ai</td>
+<td>When using emails, the address to forward emails which Cape was unable to answer automatically. For more info click <a href='#setting-the-forward-email-address'>here</a>.</td>
+</tr>
+<tr>
+<td>forwardEmailVerified</td>
+<td>false</td>
+<td>Whether or not the forward email has been verified. For more info click <a href='#setting-the-forward-email-address'>here</a>.</td>
+</tr>
+</tbody></table>
+<h1 id='user-creation-and-deletion'>User - Creation and Deletion</h1>
+<p>When the Google and Facebook account logins are disabled (default behaviour).
+The only way to add new users is by using the SUPER ADMIN endpoints and providing the SUPER ADMIN token.
+This token has to configured when launching the backend, it is by default <code>REPLACEME</code></p>
+<h2 id='cape-super-admin-creating-a-new-account'>Cape SUPER ADMIN - Creating a new account</h2>
+<p>To create a new account provide, the super admin token, the login, password and optionally the user token for the new user.
+Please note that the login and user token need to be unique or you will get an error.</p>
+
+<blockquote>
+<p>To create a new user:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v <span class="s2">"http://localhost:5050/api/0.1/user/create-user?userId=login&amp;password=password&amp;token=token&amp;superAdminToken=REPLACEME"</span>
+</code></pre>
+<blockquote>
+<p>This returns the username on success</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">&gt; </span>GET /api/0.1/user/create-user?userId<span class="o">=</span>login&amp;password<span class="o">=</span>password&amp;token<span class="o">=</span>token&amp;superAdminToken<span class="o">=</span>REPLACEME HTTP/1.1
+<span class="gp">&gt; </span>Host: localhost:5050
+<span class="gp">&gt; </span>User-Agent: curl/7.43.0
+<span class="gp">&gt; </span>Accept: <span class="k">*</span>/<span class="k">*</span>
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Connection: keep-alive
+&lt; Keep-Alive: 600
+&lt; Access-Control-Allow-Origin: <span class="k">*</span>
+&lt; Access-Control-Allow-Credentials: <span class="nb">true</span>
+&lt; Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+&lt; Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token
+&lt; Content-Length: 46
+&lt; Content-Type: application/json
+&lt;
+<span class="k">*</span> Connection <span class="c">#0 to host localhost left intact</span>
+<span class="o">{</span><span class="s2">"success"</span>:true,<span class="s2">"result"</span>:<span class="o">{</span><span class="s2">"username"</span>:<span class="s2">"login"</span><span class="o">}}</span>
+</code></pre><h3 id='definition'>Definition</h3>
+<p><code>/api/0.1/user/create-user</code></p>
+
+<p>No Mock example for this endpoint.</p>
+<h3 id='input'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>userId</strong></td>
+<td>mylogin</td>
+<td>The login of the user.</td>
+</tr>
+<tr>
+<td><strong>password</strong></td>
+<td>mypassword</td>
+<td>The password of the user.</td>
+</tr>
+<tr>
+<td><strong>superAdminToken</strong></td>
+<td>REPLACEME</td>
+<td>The super admin token of the backend.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>mytoken</td>
+<td>The user token of the user.</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>mylogin</td>
+<td>For indicative purposes the login of the new user.</td>
+</tr>
+</tbody></table>
+<h2 id='cape-super-admin-deleting-an-existing-account'>Cape SUPER ADMIN - Deleting an existing account</h2>
+<p>To delete a user account provide, the super admin token, the existing user login.
+Please note that the login must exist or you will get an error.
+Please note that all the user data, including documents, annotations and saved replies will be permanently deleted.</p>
+
+<blockquote>
+<p>To delete an existing user:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v <span class="s2">"http://localhost:5050/api/0.1/user/delete-user?userId=login&amp;superAdminToken=REPLACEME"</span>
+</code></pre>
+<blockquote>
+<p>This returns the username on success</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">&gt; </span>GET /api/0.1/user/delete-user?userId<span class="o">=</span>login&amp;superAdminToken<span class="o">=</span>REPLACEME HTTP/1.1
+<span class="gp">&gt; </span>Host: localhost:5050
+<span class="gp">&gt; </span>User-Agent: curl/7.43.0
+<span class="gp">&gt; </span>Accept: <span class="k">*</span>/<span class="k">*</span>
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Connection: keep-alive
+&lt; Keep-Alive: 600
+&lt; Access-Control-Allow-Origin: <span class="k">*</span>
+&lt; Access-Control-Allow-Credentials: <span class="nb">true</span>
+&lt; Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+&lt; Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token
+&lt; Content-Length: 46
+&lt; Content-Type: application/json
+&lt;
+<span class="k">*</span> Connection <span class="c">#0 to host localhost left intact</span>
+<span class="o">{</span><span class="s2">"success"</span>:true,<span class="s2">"result"</span>:<span class="o">{</span><span class="s2">"username"</span>:<span class="s2">"login"</span><span class="o">}}</span>
+</code></pre><h3 id='definition-2'>Definition</h3>
+<p><code>/api/0.1/user/delete-user</code></p>
+
+<p>No Mock example for this endpoint.</p>
+<h3 id='input-2'>Input</h3>
+<p>Input parameters in bold are required, all other parameters are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>userId</strong></td>
+<td>mylogin</td>
+<td>The login of the user to delete.</td>
+</tr>
+<tr>
+<td><strong>superAdminToken</strong></td>
+<td>REPLACEME</td>
+<td>The super admin token of the backend.</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>mylogin</td>
+<td>For indicative purposes the login of the successfully deleted user.</td>
+</tr>
+</tbody></table>
+<h1 id='handling-results-with-lists'>Handling results with lists</h1>
+<p>Many methods return lists of items. Where possible we&#39;ve provided a consistent
+interface to all lists. Any method that returns a list will accept the 
+parameters <em>numberOfItems</em> and <em>offset</em>. These can be used to retrieve items
+from a list in batches.</p>
+
+<p>When a method returns a list it will typically also provide a key called 
+<em>totalItems</em> which specifies the complete number of items available 
+(not just the specific number requested in this call).</p>
+
+<p>Using these pieces of information, you can choose which items are returned.
+For example, if there are 100 responses, you can get the last 5 items by
+setting <em>numberOfItems</em> to 5, and <em>offset</em> to 95.</p>
+
+<blockquote>
+<p>To fetch just the first item from the inbox</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/inbox/get-inbox?numberOfItems=1'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">inbox</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_inbox</span><span class="p">(</span><span class="n">number_of_items</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inbox</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>This returns the first item, but also informs us that there are two items in total</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:6,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"4124"</span>,
+        <span class="s2">"answered"</span>:false,
+        <span class="s2">"read"</span>:false,
+        <span class="s2">"question"</span>:<span class="s2">"Who are you?"</span>,
+        <span class="s2">"questionSource"</span>:<span class="s2">"API"</span>,
+        <span class="s2">"created"</span>:1508162032,
+        <span class="s2">"answers"</span>:[]
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'4124'</span><span class="p">,</span>
+            <span class="s">'answered'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'read'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'question'</span><span class="p">:</span> <span class="s">'Who are you?'</span><span class="p">,</span>
+            <span class="s">'questionSource'</span><span class="p">:</span> <span class="s">'API'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508162032</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>We can try to fetch the next 5 items</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://localhost:5050/api/0.1/inbox/get-inbox?numberOfItems=5&amp;offset=1'</span> <span class="se">\</span>
+    -b <span class="s1">'session=&lt;your session id&gt;'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">cape.client</span> <span class="kn">import</span> <span class="n">CapeClient</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">CapeClient</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">'blo'</span><span class="p">,</span> <span class="s">'bla'</span><span class="p">)</span>
+<span class="n">inbox</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get_inbox</span><span class="p">(</span><span class="n">number_of_items</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inbox</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Because there are only a total of two items available this just returns the second item</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>:true,
+  <span class="s2">"result"</span>:<span class="o">{</span>
+    <span class="s2">"totalItems"</span>:2,
+    <span class="s2">"items"</span>:[
+      <span class="o">{</span>
+        <span class="s2">"id"</span>:<span class="s2">"4123"</span>,
+        <span class="s2">"answered"</span>:true,
+        <span class="s2">"read"</span>:false,
+        <span class="s2">"question"</span>:<span class="s2">"How easy is the API to use?"</span>,
+        <span class="s2">"questionSource"</span>:<span class="s2">"API"</span>,
+        <span class="s2">"created"</span>:1508161834,
+        <span class="s2">"answers"</span>:[
+          <span class="o">{</span>
+            <span class="s2">"text"</span>:<span class="s2">"Hopefully it's pretty easy"</span>,
+            <span class="s2">"confidence"</span>:0.75,
+            <span class="s2">"sourceType"</span>:<span class="s2">"document"</span>,
+            <span class="s2">"sourceId"</span>:<span class="s2">"358e1b77c9bcc353946dfe107d6b32ff"</span>,
+            <span class="s2">"startOffset"</span>:30,
+            <span class="s2">"endOffset"</span>:56
+          <span class="o">}</span>
+        <span class="o">]</span>
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="p">{</span>
+    <span class="s">'totalItems'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">'items'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="s">'4123'</span><span class="p">,</span>
+            <span class="s">'answered'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'read'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">'question'</span><span class="p">:</span> <span class="s">'How easy is the API to use?'</span><span class="p">,</span>
+            <span class="s">'questionSource'</span><span class="p">:</span> <span class="s">'API'</span><span class="p">,</span>
+            <span class="s">'created'</span><span class="p">:</span> <span class="mi">1508161834</span><span class="p">,</span>
+            <span class="s">'answers'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">'text'</span><span class="p">:</span> <span class="s">"Hopefully it's pretty easy"</span><span class="p">,</span>
+                    <span class="s">'confidence'</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+                    <span class="s">'sourceType'</span><span class="p">:</span> <span class="s">'document'</span><span class="p">,</span>
+                    <span class="s">'sourceId'</span><span class="p">:</span> <span class="s">'358e1b77c9bcc353946dfe107d6b32ff'</span><span class="p">,</span>
+                    <span class="s">'startOffset'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+                    <span class="s">'endOffset'</span><span class="p">:</span> <span class="mi">56</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre><h1 id='mock-services'>Mock services</h1>
+<p>In additional to the genuine API service the <a href="https://github.com/bloomsburyai/cape-frontend">frontend</a> service provides four mock services which can be used to assist with testing.
+None of these mock services has any permanent effect and will always return the same responses, making them suitable for
+inclusion in your own unit tests.</p>
+
+<p>Each endpoint in the mock services corresponds to what an operation would return in a real setting. Each mock method
+returns an example of the output you could expect to see from the real API.</p>
+<h2 id='full-mock-service'>Full mock service</h2>
+<blockquote>
+<p>The full mock service returns complete output for a call:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"totalItems"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"custom_id_2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"document2.txt"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"document2.txt"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="s2">"This is another document."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"file"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created"</span><span class="p">:</span><span class="mi">1508169352</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modified"</span><span class="p">:</span><span class="mi">1508169352</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"358e1b77c9bcc353946dfe107d6b32ff"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"cape_api.txt"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"cape_api.txt"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="s2">"Welcome to the Cape API 0.1. Hopefully it's pretty easy to use."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created"</span><span class="p">:</span><span class="mi">1508161723</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modified"</span><span class="p">:</span><span class="mi">1508161723</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The full mock service is available at <a href="http://localhost:5051/mock/full/api/0.1/">http://localhost:5051/mock/full/api/0.1/</a>.
+It aims at giving responses describing &quot;full&quot; cases, this might include :</p>
+
+<ul>
+<li>For a <code>login</code> endpoint : The login credentials are valid.</li>
+<li>For a <code>search</code> endpoint : A full page of results is returned.</li>
+<li>For an <code>answer question</code> endpoint : An answer is returned .</li>
+</ul>
+<h2 id='unlucky-mock-service'>Unlucky mock service</h2>
+<blockquote>
+<p>The unlucky mock service returns a different type of failure for each method:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"A reply for the question 'Test?' already exists."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The unlucky mock service is available at <a href="http://localhost:5051/mock/unlucky/api/0.1/">http://localhost:5051/mock/unlucky/api/0.1/</a>.
+It aims at giving responses describing &quot;unlucky&quot; cases, this might include :</p>
+
+<ul>
+<li>for a <code>login</code> endpoint : The login credentials are invalid,</li>
+<li>for a <code>search</code> endpoint : No search results,</li>
+<li>for an <code>answer question</code> endpoint : No answer found,</li>
+<li>for a <code>document upload</code> endpoint : A document already exists with that Id, or</li>
+<li>for a <code>delete</code> endpoint : The item being deleted does not exist.</li>
+</ul>
+
+<p>These may or may not produce a <code>&quot;success&quot;: false</code> response, depending on the call. (For example a failed upload would
+return false, but an empty search response would be successful just without any results in the list.)</p>
+
+<p>These are useful for checking how your code handles errors.</p>
+<h2 id='error-mock-service'>Error mock service</h2>
+<blockquote>
+<p>The error mock service returns the same error for all methods:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Something went wrong while processing the request."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The error mock service is available at <a href="http://localhost:5051/mock/error/api/0.1/">http://localhost:5051/mock/error/api/0.1/</a>.
+It aims at giving responses describing &quot;server error&quot; cases, this always returns the same response from all endpoints.</p>
+<h2 id='timeout-mock-service'>Timeout mock service</h2>
+<blockquote>
+<p>The timeout mock service never returns a response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>The timeout mock service is available at <a href="http://localhost:5051/mock/timeout/api/0.1/">http://localhost:5051/mock/timeout/api/0.1/</a>.
+It aims at simulating a server hanging and never returning a response, this always has the same behaviour from all endpoints.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

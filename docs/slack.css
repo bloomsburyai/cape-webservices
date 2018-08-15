@@ -1,0 +1,121 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+h2 {
+    margin-top: 1.5em;
+}
+
+.element {
+  position: relative;
+  float: left;
+}
+
+.text {
+  float: left;
+}
+
+.text-4 p {
+  margin-bottom: 1em;
+}
+
+.wrapper {
+  width: 640px;
+  height: 289px;
+  margin: 30px auto 0;
+  overflow: hidden;
+}
+
+.element-1 {
+  z-index: 1;
+  width: 100%;
+  height: 92px;
+  background-color: rgb(25, 110, 180);
+}
+
+.element-2 {
+  clear: both;
+  z-index: 5;
+  width: 5.4166666666%;
+  height: 65px;
+  margin: -80px 0 0 28.33073%;
+  background: url('logo.png') rgba(222, 222, 222, 0);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.element-3 {
+  z-index: 4;
+  width: 19.4166666666%;
+  height: 60px;
+  margin: -75px 0 0 54.41276%;
+  background: url('slack-logo.svg') rgba(222, 222, 222, 0);
+  background-repeat: no-repeat;
+  background-size: 288px 120px;
+  background-position: center center;
+}
+
+.text-1 {
+  width: 9.9166666666%;
+  min-height: 76px;
+  margin: -94px 0 0 37.75%;
+  font-family: Roboto;
+  font-size: 2.813em;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.text-2 {
+  position: relative;
+  z-index: 2;
+  margin: -80px 0 0 35.91276%;
+  font: Roboto;
+  font-size: 3.125em;
+  color: rgb(255, 255, 255);
+}
+
+.text-3 {
+  position: relative;
+  z-index: 3;
+  margin: -66px 0 0 49.7513%;
+  font-family: Roboto;
+  font-size: 1.875em;
+  color: rgb(255, 255, 255);
+}
+
+.text-4 {
+  clear: both;
+  width: 53.3333333333%;
+  min-height: 100px;
+  margin: 35px 0 0 23.33203%;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.warning {
+  clear: both;
+  margin: 10px 10px 10px 10px;
+  font-size: .9em;
+  background: rgba(248, 243, 138, 0.23);
+  border: solid 1px #e0e23a;
+  padding: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.message {
+  display: none;
+  clear: both;
+  width: 53.3333333333%;
+  margin: 10px 0 0 23.33203%;
+  font-size: 1em;
+  background: #1df0a30b;
+  border: solid 1px #148f56;
+  padding: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
