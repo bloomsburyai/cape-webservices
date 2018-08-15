@@ -8,8 +8,6 @@ pytest==3.6.4
 requests==2.18.1
 sanic==0.6.0
 
-
-
 #internal dependencies
 cape.client==0.2.0
 git+https://github.com/bloomsburyai/cape-userdb
