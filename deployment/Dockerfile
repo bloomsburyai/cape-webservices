@@ -74,7 +74,7 @@ ENV CAPE_MODEL_URL https://github.com/bloomsburyai/cape-document-qa/releases/dow
 ENV CAPE_MODEL_MB_SIZE 422
 ENV DOWNLOAD_ALL_GLOVE_EMBEDDINGS False
 ENV CAPE_GLOVE_EMBEDDINGS_URL https://nlp.stanford.edu/data/glove.840B.300d.zip
-ENV CAPE_LM_URL https://github.com/bloogram/cape-document-qa/releases/download/v0.1.2/lm.tar.bz2')
+ENV CAPE_LM_URL https://github.com/bloogram/cape-document-qa/releases/download/v0.1.2/lm.tar.bz2
 
 
 # cape-document-manager Environment variables:
