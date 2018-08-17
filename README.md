@@ -2,7 +2,8 @@
 
 Entrypoint for all backend cape webservices.
 
-Github hosted [cape-frontend](https://github.com/bloomsburyai/cape-frontend) [here](http://bloomsbury.ai/landing.html) (this still requires for you to launch a webservice instance).
+Frontend demo is [here](http://bloomsbury.ai/landing.html) (only works if you already launched a Backend).
+
 
 ## Overview of Cape
 
