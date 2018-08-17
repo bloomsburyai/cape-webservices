@@ -219,7 +219,7 @@ def _stats(request):
 
     for event in events:
         question = {
-            'created': event.created,
+            'created': event.created.isoformat(),
             'duration': event.duration,
             'question': event.question
         }
