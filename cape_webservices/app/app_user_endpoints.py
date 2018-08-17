@@ -193,43 +193,6 @@ def _delete_user(request):
     return {'username': user_id}
 
 
-@_endpoint_route('/user/copy-user')
-@respond_with_json
-@requires_admin
-def _copy_user(request):
-    original_user_id = required_parameter(request, 'originalUserId').lower()
-    new_user_id = required_parameter(request, 'newUserId').lower()
-    password = required_parameter(request, 'password').lower()
-    original_user = User.get('user_id', original_user_id)
-    if original_user is None:
-        raise UserException(ERROR_USER_DOES_NOT_EXIST % original_user)
-
-    new_user = User(user_id=new_user_id, password=password)
-    new_user.terms_agreed = original_user.terms_agreed
-    new_user.plan = original_user.plan
-    new_user.document_threshold = original_user.document_threshold
-    new_user.saved_reply_threshold = original_user.saved_reply_threshold
-    new_user.third_party_info = original_user.third_party_info
-    new_user.default_response = original_user.default_response
-    new_user.onboarding_completed = original_user.onboarding_completed
-
-    try:
-        new_user.save()
-    except IntegrityError as e:
-        raise UserException(e.args[1])
-
-    backend = _save_splitter.cache.cache.cache.backend
-    for item in backend.bucket.objects.filter(Prefix=os.path.join(backend.tablet_id, original_user.token)):
-        backend.bucket.copy({'Bucket': backend.bucket.name, 'Key': item.key},
-                            item.key.replace(original_user.token, new_user.token))
-
-    for event in Event.select().where(Event.user_id == original_user_id):
-        event.id = None  # Create a new copy of the event
-        event.user_id = new_user.user_id
-        event.save()
-
-    return {'originalUserId': original_user.user_id, "newUserId": new_user.user_id}
-
 
 @_endpoint_route('/user/stats')
 @respond_with_json

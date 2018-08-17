@@ -70,9 +70,6 @@ def _test(request):
             'hostname': HOSTNAME, 'port': CONFIG_SERVER['port']}
 
 
-
-
-
 @_endpoint_route('/answer')
 @debuggable
 @respond_with_json
@@ -98,11 +95,11 @@ def _answer(request, number_of_items=1, offset=0, document_ids=None, max_number_
             speed_or_accuracy = "total"
     if text is not None and len(text) > MAX_SIZE_INLINE_TEXT:
         raise UserException(ERROR_MAX_SIZE_INLINE_TEXT % (MAX_SIZE_INLINE_TEXT, len(text)))
-    preview = "" if text is None else f"Text: {text[:25]}...{text[25:]}\n"
     results = []
 
     if source_type != 'document':
-        results.extend(Responder.get_answers_from_similar_questions(user_token, question, source_type, document_ids,saved_reply_threshold))
+        results.extend(Responder.get_answers_from_similar_questions(user_token, question, source_type, document_ids,
+                                                                    saved_reply_threshold))
 
     results = sorted(results, key=lambda x: x['confidence'],
                      reverse=True)
@@ -113,7 +110,7 @@ def _answer(request, number_of_items=1, offset=0, document_ids=None, max_number_
                                                             document_ids,
                                                             offset,
                                                             number_of_items - len(results),
-                                                            text,document_threshold))
+                                                            text, document_threshold, speed_or_accuracy))
 
     results = results[offset:offset + number_of_items]
 
