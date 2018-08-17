@@ -42,8 +42,8 @@ We recommend at least 3GB of RAM and at least 2 modern CPU cores (4 if virtual).
 You can run a standalone version of the webapp that includes a management dashboard.
 After installing [docker](https://www.docker.com/community-edition), update and run the Cape image:
 
-`docker pull bloomsburyai/cape && docker run bloomsburyai/cape`
-
+`docker pull bloomsburyai/cape && docker run -ti -p 5050:5050 -p 5051:5051 bloomsburyai/cape`
+ 
 This will launch both the backend and the frontend webservices, by default it will also create tunnels for both, outputting the public urls:
 
    * To use the frontend just browse to the given url, it will be something similar to :
@@ -65,6 +65,9 @@ This will launch both the backend and the frontend webservices, by default it wi
 
 1. If you are interested in understanding a bit more about what the response looks like, display the full response using: `print(response)`
 
+## Installing without docker
+
+To natively install Cape on a linux system, take a look at [deployment/Dockerfile]().
 
 ## Structure
 
