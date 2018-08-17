@@ -7,7 +7,7 @@ Frontend demo is [here](http://bloomsbury.ai/landing.html) (only works if you al
 
 ## Overview of Cape
 
-Cape is a suite of open-source libraries to manage a questions-answering model that answers questions by "reading" documents automatically. It is based on state-of-the-art machine reading models trained on massive datasets, and includes several mechanisms to make it easy to use and improve based on user feedback. It has been designed to be *portable*, i.e. works on a single laptop or on a cluster of parallel machines to speedup computation, and is *Open Source friendly* to be used at all expertise levels.
+Cape is a suite of open-source libraries to manage a question-answering model that answers questions by "reading" documents automatically. It is based on state-of-the-art machine reading models trained on massive datasets, and includes several mechanisms to make it easy to use and improve based on user feedback. It has been designed to be *portable*, i.e. works on a single laptop or on a cluster of parallel machines to speedup computation, and is *Open Source friendly* to be used at all expertise levels.
 
 It enables users to 
 - upload documents and answer questions extracted from them, 
@@ -23,8 +23,8 @@ There are several ways to use Cape :
    ```
    * As a python service : `python3 -m cape_webservices.run`
    * As a standalone Docker container : `docker run -p 5050:5050 bloomsburyai/cape`
-   * As an app with UI (more info here)
-   * As a distributed cluster (more info here)
+   * As an app with UI
+   * As a distributed cluster
    * As a slack bot (video [here](https://vimeo.com/258053984), more info [here](https://github.com/bloomsburyai/cape-slack-plugin))
    * AI-in-the-middle email answering system (video [here](https://vimeo.com/258794094), more info [here](https://github.com/bloomsburyai/cape-email-plugin))
    * As a Facebook bot (more info [here](https://github.com/bloomsburyai/cape-facebook-plugin))
