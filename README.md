@@ -4,7 +4,6 @@ Entrypoint for all backend cape webservices.
 
 Frontend demo is [here](http://bloomsbury.ai/landing.html) (only works if you already launched a Backend).
 
-
 ## Overview of Cape
 
 Cape is a suite of open-source libraries to manage a question-answering model that answers questions by "reading" documents automatically. It is based on state-of-the-art machine reading models trained on massive datasets, and includes several mechanisms to make it easy to use and improve based on user feedback. It has been designed to be *portable*, i.e. works on a single laptop or on a cluster of parallel machines to speedup computation, and is *Open Source friendly* to be used at all expertise levels.
